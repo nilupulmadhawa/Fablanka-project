@@ -1,8 +1,12 @@
-import "../styles/globals.css";
+import Head from "next/head";
+import { Provider } from "react-redux";
+import { useStore } from "../store";
 
 function MyApp({ Component, pageProps }) {
+  const store = useStore(pageProps.initialReduxState);
+
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <title>HTTPOnly Auth</title>
         <meta name="viewport" content="width=device-width, inital-scale=1" />
@@ -19,7 +23,7 @@ function MyApp({ Component, pageProps }) {
         ></script>
       </Head>
       <Component {...pageProps} />
-    </>
+    </Provider>
   );
 }
 
