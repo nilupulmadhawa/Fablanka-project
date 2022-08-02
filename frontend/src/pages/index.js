@@ -3,7 +3,7 @@ import Layout from "../hocs/Layout";
 const Home = () => {
   return (
     <Layout
-      title="httpOnly Auth | Home"
+      title="fablanka | home"
       content="Home page for this auth tutorial on httpOnly cookies with json web tokens"
     >
       <div className="p-5 bg-light rounded-3">

@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head>
-        <title>HTTPOnly Auth</title>
+        <title>FabLanka</title>
         <meta name="viewport" content="width=device-width, inital-scale=1" />
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
