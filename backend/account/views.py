@@ -2,10 +2,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import permissions, status
 from django.contrib.auth.models import User
-from.serializers import UserSerializer
+from .serializers import UserSerializer
+
 
 class RegisterView(APIView):
-    permission_classes = (permissions.AllowAny,)
+    permission_classes = (permissions.AllowAny, )
 
     def post(self, request):
         try:
@@ -61,17 +62,17 @@ class RegisterView(APIView):
             )
 
 class LoadUserView(APIView):
-    def get(self, request):
+    def get(self, request, format=None):
         try:
             user = request.user
             user = UserSerializer(user)
 
             return Response(
-                {'user': user.data}, 
-            status=status.HTTP_200_OK
+                {'user': user.data},
+                status=status.HTTP_200_OK
             )
         except:
-            return Response({
-                'error': 'Error while loading user'
-            },status=status.HTTP_400_BAD_REQUEST
+            return Response(
+                {'error': 'Something went wrong when trying to load user'},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
