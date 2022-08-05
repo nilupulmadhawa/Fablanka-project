@@ -1,0 +1,51 @@
+export const data = [
+  {
+    id: 1,
+    title: "Introduces FabLanka",
+    price: "Free",
+    category: "Tutorial",
+    linkImg: "https://eps.leeds.ac.uk/images/800x400_manufacturing_lab_min.jpg",
+  },
+  {
+    id: 2,
+    title: "Introduces FabLanka",
+    price: "Free",
+    category: "Tutorial",
+    linkImg: "https://eps.leeds.ac.uk/images/800x400_manufacturing_lab_min.jpg",
+  },
+  {
+    id: 3,
+    title: "Introduces FabLanka",
+    price: "Free",
+    category: "Tutorial",
+    linkImg: "https://eps.leeds.ac.uk/images/800x400_manufacturing_lab_min.jpg",
+  },
+  {
+    id: 4,
+    title: "Introduces FabLanka",
+    price: "Free",
+    category: "Tutorial",
+    linkImg: "https://eps.leeds.ac.uk/images/800x400_manufacturing_lab_min.jpg",
+  },
+  {
+    id: 5,
+    title: "Introduces FabLanka",
+    price: "Free",
+    category: "Tutorial",
+    linkImg: "https://eps.leeds.ac.uk/images/800x400_manufacturing_lab_min.jpg",
+  },
+  {
+    id: 6,
+    title: "Introduces FabLanka",
+    price: "Free",
+    category: "Tutorial",
+    linkImg: "https://eps.leeds.ac.uk/images/800x400_manufacturing_lab_min.jpg",
+  },
+  {
+    id: 7,
+    title: "Introduces FabLanka",
+    price: "Free",
+    category: "Tutorial",
+    linkImg: "https://eps.leeds.ac.uk/images/800x400_manufacturing_lab_min.jpg",
+  },
+];

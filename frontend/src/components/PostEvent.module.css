@@ -1,0 +1,5 @@
+@media screen and (min-width: 600px) {
+  .card_container {
+    padding: 0;
+  }
+}

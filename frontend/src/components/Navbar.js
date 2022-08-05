@@ -48,7 +48,7 @@ const navbar = () => {
           </a>
         </Link>
       </li> */}
-      <li className="nav-item">
+      <li className="nav-item px-3">
         <Link href="/login">
           <a
             className={
@@ -66,7 +66,7 @@ const navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <Link href="/">
-          <a className="navbar-brand">httpOnly Auth</a>
+          <a className="navbar-brand">FABLAB</a>
         </Link>
         <button
           className="navbar-toggler"
@@ -80,8 +80,8 @@ const navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
+          <ul className="navbar-nav mx-auto">
+            <li className="nav-item px-3">
               <Link href="/">
                 <a
                   className={
@@ -92,54 +92,61 @@ const navbar = () => {
                 </a>
               </Link>
             </li>
-            <li className="nav-item">
-              <Link href="/">
+            <li className="nav-item px-3">
+              <Link href="/#">
                 <a
                   className={
-                    router.pathname === "/" ? "nav-link active" : "nav-link"
+                    router.pathname === "/#" ? "nav-link active" : "nav-link"
                   }
                 >
                   Industry 4.0 Technologies
                 </a>
               </Link>
             </li>
-            <li className="nav-item">
-              <Link href="/">
+            <li className="nav-item px-3">
+              <Link href="/#">
                 <a
                   className={
-                    router.pathname === "/" ? "nav-link active" : "nav-link"
+                    router.pathname === "/#" ? "nav-link active" : "nav-link"
                   }
                 >
                   Free education
                 </a>
               </Link>
             </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown px-3 ">
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
-                id="navbarDropdown"
+                id="navbarDropdownMenuLink"
                 role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
+                data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Dropdown link
               </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </div>
+              <ul
+                className="dropdown-menu dropdown-menu-dark"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Action
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Another action
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Something else here
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li className="nav-item">
+            <li className="nav-item px-3">
               <Link href="/about">
                 <a
                   className={
@@ -152,11 +159,11 @@ const navbar = () => {
                 </a>
               </Link>
             </li>
-            <li className="nav-item">
-              <Link href="/">
+            <li className="nav-item px-3">
+              <Link href="/#">
                 <a
                   className={
-                    router.pathname === "/" ? "nav-link active" : "nav-link"
+                    router.pathname === "/#" ? "nav-link active" : "nav-link"
                   }
                 >
                   Home
