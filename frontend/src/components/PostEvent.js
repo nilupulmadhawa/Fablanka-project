@@ -66,6 +66,7 @@ const PostEvent = () => {
   return (
     <>
       <div className="container-fluid p-5">
+        <h1>Past Event</h1>
         <Slider {...settings} className={styles.card_container}>
           {data.map((item, index) => (
             <div className={`card_container px-sm-2 ${styles.card_container}`}>

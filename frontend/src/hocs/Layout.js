@@ -20,7 +20,7 @@ const Layout = ({ title, content, children }) => {
         <meta name="description" content={content} />
       </Head>
       <Navbar />
-      <div className="container-fluid px-5 mt-5">{children}</div>
+      <div className="container px-5 mt-5">{children}</div>
       <FooterContainer />
     </>
   );
