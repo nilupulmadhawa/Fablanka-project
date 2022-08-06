@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../actions/auth";
+import { MDBIcon } from "mdb-react-ui-kit";
+import Styles from "../styles/Navbar.module.css";
 
 const navbar = () => {
   const dispatch = useDispatch();
@@ -16,7 +18,7 @@ const navbar = () => {
 
   const authLinks = (
     <>
-      <li className="nav-item">
+      <li className="nav-item px-3">
         <Link href="/dashboard">
           <a
             className={
@@ -27,7 +29,18 @@ const navbar = () => {
           </a>
         </Link>
       </li>
-      <li className="nav-item">
+      <li className="nav-item px-3">
+        <Link href="/newsadd">
+          <a
+            className={
+              router.pathname === "/newsadd" ? "nav-link active" : "nav-link"
+            }
+          >
+            Add News
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item px-3">
         <a className="nav-link" href="#!" onClick={logoutHandler}>
           Logout
         </a>
@@ -49,6 +62,80 @@ const navbar = () => {
         </Link>
       </li> */}
       <li className="nav-item px-3">
+        <Link href="/">
+          <a
+            className={router.pathname === "/" ? "nav-link active" : "nav-link"}
+          >
+            Home
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item px-3">
+        <Link href="/#">
+          <a
+            className={
+              router.pathname === "/#" ? "nav-link active" : "nav-link"
+            }
+          >
+            Industry 4.0 Technologies
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item px-3">
+        <Link href="/#">
+          <a
+            className={
+              router.pathname === "/#" ? "nav-link active" : "nav-link"
+            }
+          >
+            Free education
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item dropdown px-3 ">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Dropdown link
+        </a>
+        <ul
+          className="dropdown-menu dropdown-menu-dark"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li>
+            <a className="dropdown-item" href="#">
+              Action
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Another action
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Something else here
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li className="nav-item px-3">
+        <Link href="/about">
+          <a
+            className={
+              router.pathname === "/about" ? "nav-link active" : "nav-link"
+            }
+          >
+            About Us
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item px-3">
         <Link href="/login">
           <a
             className={
@@ -63,7 +150,9 @@ const navbar = () => {
   );
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav
+      className={`navbar navbar-expand-lg navbar-dark bg-dark sticky-sm-top ${Styles.navbar}`}
+    >
       <div className="container-fluid">
         <Link href="/">
           <a className="navbar-brand">FABLAB</a>
@@ -77,99 +166,12 @@ const navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon">
+            <MDBIcon fas icon="bars" />
+          </span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
-            <li className="nav-item px-3">
-              <Link href="/">
-                <a
-                  className={
-                    router.pathname === "/" ? "nav-link active" : "nav-link"
-                  }
-                >
-                  Home
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item px-3">
-              <Link href="/#">
-                <a
-                  className={
-                    router.pathname === "/#" ? "nav-link active" : "nav-link"
-                  }
-                >
-                  Industry 4.0 Technologies
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item px-3">
-              <Link href="/#">
-                <a
-                  className={
-                    router.pathname === "/#" ? "nav-link active" : "nav-link"
-                  }
-                >
-                  Free education
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item dropdown px-3 ">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown link
-              </a>
-              <ul
-                className="dropdown-menu dropdown-menu-dark"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item px-3">
-              <Link href="/about">
-                <a
-                  className={
-                    router.pathname === "/about"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
-                >
-                  About Us
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item px-3">
-              <Link href="/#">
-                <a
-                  className={
-                    router.pathname === "/#" ? "nav-link active" : "nav-link"
-                  }
-                >
-                  Home
-                </a>
-              </Link>
-            </li>
             {isAuthenticated ? authLinks : guestLinks}
           </ul>
         </div>

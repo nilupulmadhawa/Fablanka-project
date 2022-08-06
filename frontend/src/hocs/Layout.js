@@ -2,8 +2,17 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { request_refresh } from "../actions/auth";
 import Head from "next/head";
-import Navbar from "../components/Navbar";
-import FooterContainer from "../components/footer";
+// import Navbar from "../components/Navbar";
+// import Footer from "../components/footer";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("../components/footer"), {
+  ssr: false,
+});
+
+const Navbar = dynamic(() => import("../components/Navbar"), {
+  ssr: false,
+});
 
 const Layout = ({ title, content, children }) => {
   const dispatch = useDispatch();
@@ -21,15 +30,14 @@ const Layout = ({ title, content, children }) => {
       </Head>
       <Navbar />
       <div className="container-fluid px-5 mt-5">{children}</div>
-      <FooterContainer />
+      <Footer />
     </>
   );
 };
 
 Layout.defaultProps = {
-  title: "httpOnly Auth",
-  content:
-    "Tutorial for showing you how to use httpOnly cookies for storing json web tokens",
+  title: "FabLanka",
+  content: "FabLanka",
 };
 
 export default Layout;
