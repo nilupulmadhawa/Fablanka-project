@@ -1,8 +1,7 @@
 import Layout from "../hocs/Layout";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import Styles from "../styles/about.module.css";
-// import { MDBContainer } from "mdb-react-ui-kit";
+import React from "react";
+import OurTeam from "../components/about/ourteam";
 
 const About = () => {
   return (
@@ -10,7 +9,7 @@ const About = () => {
       <>
         <div
           breakpoint="sm"
-          className="container shadow bg-white rounded p-5 mb-5 position-relative"
+          className="container- shadow bg-white rounded p-5 mb-5 position-relative"
         >
           <div className="row">
             <div className="col-md-8">
@@ -106,7 +105,7 @@ const About = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-12">
+            <div className="col-md-12 mb-5">
               <p className="text-left h4 mb-3">
                 <a href="https://fablanka.org/">
                   Towards a Greener Economy that protects the environment
@@ -134,6 +133,10 @@ const About = () => {
               </p>
             </div>
           </div>
+        </div>
+        <div className="">
+          <h1 className="text-center">Our Team</h1>
+          <OurTeam />
         </div>
       </>
     </Layout>

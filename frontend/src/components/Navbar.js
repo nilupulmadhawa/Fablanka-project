@@ -19,10 +19,12 @@ const navbar = () => {
   const authLinks = (
     <>
       <li className="nav-item px-3">
-        <Link href="/dashboard">
+        <Link href="/admin/dashboard">
           <a
             className={
-              router.pathname === "/dashboard" ? "nav-link active" : "nav-link"
+              router.pathname === "/admin/dashboard"
+                ? "nav-link active"
+                : "nav-link"
             }
           >
             Dashboard
@@ -30,10 +32,25 @@ const navbar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/newsadd">
+        <Link href="/admin/Register">
           <a
             className={
-              router.pathname === "/newsadd" ? "nav-link active" : "nav-link"
+              router.pathname === "/admin/Register"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            Register
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item px-3">
+        <Link href="/admin/newsadd">
+          <a
+            className={
+              router.pathname === "/admin/newsadd"
+                ? "nav-link active"
+                : "nav-link"
             }
           >
             Add News
@@ -50,17 +67,6 @@ const navbar = () => {
 
   const guestLinks = (
     <>
-      {/* <li className="nav-item">
-        <Link href="/register">
-          <a
-            className={
-              router.pathname === "/register" ? "nav-link active" : "nav-link"
-            }
-          >
-            Register
-          </a>
-        </Link>
-      </li> */}
       <li className="nav-item px-3">
         <Link href="/">
           <a
@@ -101,15 +107,15 @@ const navbar = () => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Dropdown link
+          FabLabs
         </a>
         <ul
           className="dropdown-menu dropdown-menu-dark"
           aria-labelledby="navbarDropdownMenuLink"
         >
           <li>
-            <a className="dropdown-item" href="#">
-              Action
+            <a className="dropdown-item" href="/fablabmakadura">
+              FabLab Makadura
             </a>
           </li>
           <li>

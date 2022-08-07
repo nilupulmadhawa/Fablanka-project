@@ -51,23 +51,23 @@ const Footer = () => {
             <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Products</h6>
               <p>
-                <a href="#!" className="text-reset">
-                  Angular
+                <a href="/" className="text-reset">
+                  Home
+                </a>
+              </p>
+              <p>
+                <a href="/about" className="text-reset">
+                  About Us
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  React
+                  Our Plan
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  Vue
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Laravel
+                  Technology
                 </a>
               </p>
             </MDBCol>
@@ -76,22 +76,22 @@ const Footer = () => {
               <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
               <p>
                 <a href="#!" className="text-reset">
-                  Pricing
+                  Our Team
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  Settings
+                  Constact Us
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  Orders
+                  Industry 4.0 Technologies
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  Help
+                  Projects
                 </a>
               </p>
             </MDBCol>
@@ -100,7 +100,7 @@ const Footer = () => {
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />
-                New York, NY 10012, US
+                Makadura Public Library complex, in Makadura.
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />

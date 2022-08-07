@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
-import { register } from '../actions/auth';
-import Layout from '../hocs/Layout';
+import { register } from '../../actions/auth';
+import Layout from '../../hocs/Layout';
 import Loader from 'react-loader-spinner';
 import router from 'next/router';
 

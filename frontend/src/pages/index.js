@@ -29,28 +29,18 @@ const homePage = () => {
       <div className="row">
         <div className="col-md-8 rounded-3">
           <ImageSlider />
-          <div className="row mt-2 ">
-            <p className="text-left col-md-12">
-              <small>
-                This line of text is meant to be treated as fine print.This line
-                of text is meant to be treated as fine print.This line of text
-                is meant to be treated as fine print.This line of text is meant
-                to be treated as fine print.This line of text is meant to be
-                treated as fine print.This line of text is meant to be treated
-                as fine print.This line of text is meant to be treated as fine
-                print.This line of text is meant to be treated as fine
-                print.This line of text is meant to be treated as fine
-                print.This line of text is meant to be treated as fine print.
-                This line of text is meant to be treated as fine print.This line
-                of text is meant to be treated as fine print.This line of text
-                is meant to be treated as fine print.This line of text is meant
-                to be treated as fine print.This line of text is meant to be
-                treated as fine print.This line of text is meant to be treated
-                as fine print.This line of text is meant to be treated as fine
-                print.This line of text is meant to be treated as fine
-                print.This line of text is meant to be treated as fine
-                print.This line of text is meant to be treated as fine print.
-              </small>
+          <div className="row">
+            <p className="text-justify col-md-12 mt-3">
+              Fab Lanka is a group of highly motivated individuals coming
+              together to set up fabrication labs (fab labs) throughout Sri
+              Lanka as a community outreach project. The abundance of an
+              educated work force, high degree of IT usage, and existence of a
+              large number of small and medium size manufactures (SMEs) makes
+              Sri Lanka an ideal home for fab labs. The benefits of bringing in
+              new technology is the ability to transform the manufacturing
+              sector of local economies in environmentally friendly ways. In
+              addition, it will also strengthen employment for youth in the 21st
+              century manufacturing job sector.
             </p>
           </div>
           <div className="d-none d-sm-block d-md-none">
@@ -70,7 +60,7 @@ const homePage = () => {
           </div>
         </div>
       </div>
-      <div className="col-md-12">
+      <div className="text-justify col-md-12 mt-5">
         <p>
           This line of text is meant to be treated as fine print.This line of
           text is meant to be treated as fine print.This line of text is meant

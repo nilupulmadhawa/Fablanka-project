@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import Layout from "../hocs/Layout";
+import Layout from '../../hocs/Layout';
 
 const NewsAdd = () => {
   const router = useRouter();
