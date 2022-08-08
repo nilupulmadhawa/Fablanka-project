@@ -1,9 +1,13 @@
 import Layout from "../hocs/Layout";
 import Styles from "../styles/about.module.css";
-import React from "react";
 import OurTeam from "../components/about/ourteam";
+import React, { useEffect, useState } from "react";
+import Aos from "aos";
 
 const About = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <Layout title="FabLab | About" content="Fablab about page">
       <>
@@ -44,7 +48,7 @@ const About = () => {
               </p>
             </div>
             <div className="col-md-4">
-              <div className="card mb-3">
+              <div data-aos="fade-left" className="card mb-3">
                 <h5 className={`card-header bg-primary ${Styles.card_title}`}>
                   Our Mission
                 </h5>
@@ -55,7 +59,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="card">
+              <div data-aos="fade-left" className="card">
                 <h5 className={`card-header bg-primary ${Styles.card_title}`}>
                   Our Vision
                 </h5>
@@ -134,7 +138,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div data-aos="fade-up" className="row">
           <h1 className="text-center">Our Team</h1>
           <OurTeam />
         </div>
