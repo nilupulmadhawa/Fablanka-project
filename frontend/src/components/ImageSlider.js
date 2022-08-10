@@ -27,8 +27,8 @@ const ImageSlider = () => {
           aria-label="Slide 3"
         ></button>
       </div>
-      <div className="carousel-inner pt-3">
-        <div className="carousel-item active">
+      <div className="carousel-inner">
+        <div className="carousel-item active position-relative">
           <img
             src="https://eps.leeds.ac.uk/images/800x400_manufacturing_lab_min.jpg"
             className="d-block w-100 img-fluid rounded-3"

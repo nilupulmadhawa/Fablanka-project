@@ -2,10 +2,22 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { request_refresh } from "../actions/auth";
 import Head from "next/head";
-import Navbar from "../components/Navbar";
-import FooterContainer from "../components/footer";
+import Aos from "aos";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("../components/Footer"), {
+  ssr: false,
+});
+
+const Navbar = dynamic(() => import("../components/Navbar"), {
+  ssr: false,
+});
 
 const Layout = ({ title, content, children }) => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,17 +31,20 @@ const Layout = ({ title, content, children }) => {
         <title>{title}</title>
         <meta name="description" content={content} />
       </Head>
-      <Navbar />
-      <div className="container px-5 mt-5">{children}</div>
-      <FooterContainer />
+      {/* <div data-aos="fade-down"> */}
+      <Navbar className="sticky-sm-top" />
+      {/* </div> */}
+      <div className="container-fluid px-5 mt-5">{children}</div>
+      <div>
+        <Footer />
+      </div>
     </>
   );
 };
 
 Layout.defaultProps = {
-  title: "httpOnly Auth",
-  content:
-    "Tutorial for showing you how to use httpOnly cookies for storing json web tokens",
+  title: "FabLanka",
+  content: "FabLanka",
 };
 
 export default Layout;

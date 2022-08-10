@@ -3,40 +3,51 @@ import Slider from "react-slick";
 import { data } from "./data.js";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { HomeWrapper } from "../components/style";
 import styles from "./PostEvent.module.css";
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
-      onClick={onClick}
-    />
-  );
-}
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardImage,
+  MDBBtn,
+  MDBRipple,
+} from "mdb-react-ui-kit";
 
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
-      onClick={onClick}
-    />
-  );
-}
+// function SampleNextArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{ ...style, display: "block" }}
+//       onClick={onClick}
+//     />
+//   );
+// }
+
+// function SamplePrevArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{ ...style, display: "block" }}
+//       onClick={onClick}
+//     />
+//   );
+// }
 
 const PostEvent = () => {
   var settings = {
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 3,
     initialSlide: 2,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -65,8 +76,7 @@ const PostEvent = () => {
   };
   return (
     <>
-      <div className="container-fluid p-5">
-        <h1>Past Event</h1>
+      {/* <div className="container-fluid p-5">
         <Slider {...settings} className={styles.card_container}>
           {data.map((item, index) => (
             <div className={`card_container px-sm-2 ${styles.card_container}`}>
@@ -89,7 +99,45 @@ const PostEvent = () => {
             </div>
           ))}
         </Slider>
-      </div>
+      </div> */}
+      <HomeWrapper>
+        <div className="container-fluid px-5 pb-5 pt-3 rounded-3 shadow bg-white mb-5">
+          <h1 className="text-center pb-3">Past Event</h1>
+          <Slider {...settings} className={styles.card_container}>
+            {data.map((item, index) => (
+              <div className="px-sm-2">
+                <MDBCard>
+                  <MDBRipple
+                    rippleColor="light"
+                    rippleTag="div"
+                    className="bg-image hover-overlay"
+                  >
+                    <MDBCardImage
+                      src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+                      position="top"
+                      alt="..."
+                    />
+                    <a>
+                      <div
+                        className="mask"
+                        style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+                      ></div>
+                    </a>
+                  </MDBRipple>
+                  <MDBCardBody>
+                    <MDBCardTitle>Card title</MDBCardTitle>
+                    <MDBCardText>
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </MDBCardText>
+                    <MDBBtn href="#">Button</MDBBtn>
+                  </MDBCardBody>
+                </MDBCard>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </HomeWrapper>
     </>
   );
 };
