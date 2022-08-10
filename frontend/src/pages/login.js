@@ -31,7 +31,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     if (dispatch && dispatch !== null && dispatch !== undefined)
-    dispatch(login(username, password));
+      dispatch(login(username, password));
   };
 
   if (typeof window !== "undefined" && isAuthenticated)
