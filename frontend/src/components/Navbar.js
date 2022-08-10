@@ -32,10 +32,10 @@ const navbar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/admin/Register">
+        <Link href="/admin/register">
           <a
             className={
-              router.pathname === "/admin/Register"
+              router.pathname === "/admin/register"
                 ? "nav-link active"
                 : "nav-link"
             }
@@ -45,10 +45,10 @@ const navbar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/admin/newsadd">
+        <Link href="/admin/addnews">
           <a
             className={
-              router.pathname === "/admin/newsadd"
+              router.pathname === "/admin/addnews"
                 ? "nav-link active"
                 : "nav-link"
             }
@@ -113,15 +113,29 @@ const navbar = () => {
           className="dropdown-menu dropdown-menu-dark"
           aria-labelledby="navbarDropdownMenuLink"
         >
-          <li>
-            <a className="dropdown-item" href="/fablabmakadura">
-              FabLab Makadura
-            </a>
+          <li className="nav-item dropdown px-2">
+            <Link href="/fablabs/makadura">
+              <a
+                className={
+                  router.pathname === "/fablabs/makadura"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                FabLab Makadura
+              </a>
+            </Link>
           </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Another action
-            </a>
+          <li className="nav-item dropdown px-2">
+            <Link href="/#">
+              <a
+                className={
+                  router.pathname === "/#" ? "nav-link active" : "nav-link"
+                }
+              >
+                Free education
+              </a>
+            </Link>
           </li>
           <li>
             <a className="dropdown-item" href="#">

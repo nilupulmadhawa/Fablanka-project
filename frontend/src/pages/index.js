@@ -112,10 +112,8 @@ const homePage = () => {
           </p>
         </a>
       </div>
-      <div data-aos="fade-up" className="row">
-        <div className={`mb-5 mt-5 pb-4 pt-2 px-4 rounded-3 shadow bg-white `}>
-          <PostEvent />
-        </div>
+      <div>
+        <PostEvent />
       </div>
     </Layout>
   );

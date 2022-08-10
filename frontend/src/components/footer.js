@@ -1,4 +1,6 @@
 import React from "react";
+import { useRouter } from "next/router";
+import Image from "next/image";
 import {
   MDBFooter,
   MDBContainer,
@@ -8,6 +10,9 @@ import {
 } from "mdb-react-ui-kit";
 
 const Footer = () => {
+  const router = useRouter();
+  console.log(router.pathname);
+
   return (
     <MDBFooter bgColor="dark" className="text-center text-lg-start text-muted">
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -45,7 +50,12 @@ const Footer = () => {
                 <MDBIcon icon="gem" className="me-3" />
                 FabLanka
               </h6>
-              <img src="#" className="img-thumbnail" alt="Fablanka logo" />
+              <Image
+                src="/FABcube.png"
+                width={100}
+                height={100}
+                alt="Fablanka logo"
+              />
             </MDBCol>
 
             <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">

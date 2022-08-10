@@ -1,6 +1,6 @@
 import Layout from "../hocs/Layout";
 import Styles from "../styles/about.module.css";
-import OurTeam from "../components/about/ourteam";
+import OurTeam from "../components/about/OurTeam";
 import React, { useEffect, useState } from "react";
 import Aos from "aos";
 
@@ -24,20 +24,20 @@ const About = () => {
                 </a>
               </p>
 
-              <p className={`card-justify ${Styles.qcont}`}>
+              <p className={`text-justify ${Styles.qcont}`}>
                 FabLanka was publically launched in May 2015 to facilitate and
                 nurture the growth of innovative fabrication methods in Sri
                 Lanka. FabLanka Foundation (GTE) LTD was incorporated as a
                 not-for-profit social enterprise in April 2016 under Companies
                 Act , No 7 of 2007 of Sri Lanka.
               </p>
-              <p className={`card-justify ${Styles.qcont}`}>
+              <p className={`text-justify ${Styles.qcont}`}>
                 A cooperative between professionals in Sri Lanka and around the
                 world, FabLanka aims to bring about educational and economic
                 changes while minimizing environmental impact to Sri Lanka
                 through the digital fabrication revolution.
               </p>
-              <p className={`card-justify ${Styles.qcont}`}>
+              <p className={`text-justify ${Styles.qcont}`}>
                 The goal of this cooperative is to develop fabrication labs at
                 strategic locations throughout the island. Over time, these
                 fabrication labs will connect to the larger global digital

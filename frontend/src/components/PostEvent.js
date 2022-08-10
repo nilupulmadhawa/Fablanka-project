@@ -101,7 +101,7 @@ const PostEvent = () => {
         </Slider>
       </div> */}
       <HomeWrapper>
-        <div className="container-fluid pb-5 pt-3">
+        <div className="container-fluid px-5 pb-5 pt-3 rounded-3 shadow bg-white mb-5">
           <h1 className="text-center pb-3">Past Event</h1>
           <Slider {...settings} className={styles.card_container}>
             {data.map((item, index) => (
