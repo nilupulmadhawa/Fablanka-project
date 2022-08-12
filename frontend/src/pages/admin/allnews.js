@@ -1,16 +1,9 @@
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import Layout from "../../hocs/Layout";
-import dynamic from "next/dynamic";
+import NewsTable from "../../components/news.component/NewsTable";
 
-const AddNews = dynamic(
-  () => import("../../components/news.component/AddNews"),
-  {
-    ssr: false,
-  }
-);
-
-const NewsAdd = () => {
+const AllNews = () => {
   const router = useRouter();
 
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -23,12 +16,12 @@ const NewsAdd = () => {
   return (
     <>
       <Layout title="FabLanka | News" content="Dashboard page">
-        <div className="container-fluid mb-10">
-          <AddNews />
+        <div className="container mb-10">
+          <NewsTable />
         </div>
       </Layout>
     </>
   );
 };
 
-export default NewsAdd;
+export default AllNews;
