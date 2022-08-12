@@ -106,7 +106,7 @@ const PostEvent = () => {
           <Slider {...settings} className={styles.card_container}>
             {data.map((item, index) => (
               <div className="px-sm-2">
-                <MDBCard>
+                <MDBCard className="shadow-none">
                   <MDBRipple
                     rippleColor="light"
                     rippleTag="div"

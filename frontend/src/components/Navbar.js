@@ -58,6 +58,19 @@ const navbar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
+        <Link href="/admin/allnews">
+          <a
+            className={
+              router.pathname === "/admin/allnews"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            News
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item px-3">
         <a className="nav-link" href="#!" onClick={logoutHandler}>
           Logout
         </a>
@@ -77,10 +90,12 @@ const navbar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/#">
+        <Link href="/industrytec">
           <a
             className={
-              router.pathname === "/#" ? "nav-link active" : "nav-link"
+              router.pathname === "/industrytec"
+                ? "nav-link active"
+                : "nav-link"
             }
           >
             Industry 4.0 Technologies
@@ -88,13 +103,24 @@ const navbar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/#">
+        <Link href="/education">
           <a
             className={
-              router.pathname === "/#" ? "nav-link active" : "nav-link"
+              router.pathname === "/education" ? "nav-link active" : "nav-link"
             }
           >
-            Free education
+            Education
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item px-3">
+        <Link href="/project">
+          <a
+            className={
+              router.pathname === "/project" ? "nav-link active" : "nav-link"
+            }
+          >
+            Project
           </a>
         </Link>
       </li>

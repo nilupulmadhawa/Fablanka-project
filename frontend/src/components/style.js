@@ -9,4 +9,5 @@ export const HomeWrapper = styled.div`
   .slick-arrow:hover,
   .slick-arrow:active,
   
+  
 `;

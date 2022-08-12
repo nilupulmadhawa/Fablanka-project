@@ -10,9 +10,12 @@ const PostEvent = dynamic(() => import("../components/PostEvent"), {
   ssr: false,
 });
 
-const NewAlert = dynamic(() => import("../components/NewAlert"), {
-  ssr: false,
-});
+const NewAlert = dynamic(
+  () => import("../components/news.component/NewAlert"),
+  {
+    ssr: false,
+  }
+);
 
 const homePage = () => {
   const [readMore, setReadMore] = useState(false);
@@ -82,9 +85,7 @@ const homePage = () => {
           </div>
         </div>
         <div data-aos="fade-left" className="col-md-4 d-none d-sm-block">
-          <div
-            className={`pb-4 pt-2 px-4 rounded-3 shadow bg-white ${styles.bg}`}
-          >
+          <div>
             {/* <Link href="/#" className="d-none d-lg-block">
               Click to news
             </Link> */}
