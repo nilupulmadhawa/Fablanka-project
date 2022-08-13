@@ -50,17 +50,6 @@ const About = () => {
             <div className="col-md-4">
               <div data-aos="fade-left" className="card mb-3">
                 <h5 className={`card-header bg-primary ${Styles.card_title}`}>
-                  Our Mission
-                </h5>
-                <div className="card-body">
-                  <p className={`card-justify ${Styles.qcont}`}>
-                    Establish a technologically advanced and globally connected
-                    makers' society in Sri Lanka.
-                  </p>
-                </div>
-              </div>
-              <div data-aos="fade-left" className="card">
-                <h5 className={`card-header bg-primary ${Styles.card_title}`}>
                   Our Vision
                 </h5>
                 <div className="card-body">
@@ -69,6 +58,17 @@ const About = () => {
                     life. Provide a platform of highest standard to exchange
                     knowledge, ideas and expertise on existing and emerging
                     Technologies.
+                  </p>
+                </div>
+              </div>
+              <div data-aos="fade-left" className="card ">
+                <h5 className={`card-header bg-primary ${Styles.card_title}`}>
+                  Our Mission
+                </h5>
+                <div className="card-body">
+                  <p className={`card-justify ${Styles.qcont}`}>
+                    Establish a technologically advanced and globally connected
+                    makers' society in Sri Lanka.
                   </p>
                 </div>
               </div>

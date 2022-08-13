@@ -11,14 +11,14 @@ const AddNews = dynamic(
 );
 
 const NewsAdd = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  const user = useSelector((state) => state.auth.user);
-  const loading = useSelector((state) => state.auth.loading);
+  // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  // const user = useSelector((state) => state.auth.user);
+  // const loading = useSelector((state) => state.auth.loading);
 
-  if (typeof window !== "undefined" && !loading && !isAuthenticated)
-    router.push("/login");
+  // if (typeof window !== "undefined" && !loading && !isAuthenticated)
+  //   router.push("/login");
 
   return (
     <>

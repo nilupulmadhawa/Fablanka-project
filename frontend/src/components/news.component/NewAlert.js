@@ -6,9 +6,9 @@ const NewAlert = () => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 1000,
     autoplaySpeed: 5000,
     vertical: true,
@@ -27,59 +27,41 @@ const NewAlert = () => {
     <>
       <div className="container">
         <HomeWrapper>
-          <h2 className="text-center">News</h2>
+          {/* <h2 className="text-center">News</h2> */}
           <Slider {...settings} className="m-1 mt-2 py-2">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(
               (item, index) => {
                 return (
                   <div
-                    className="card mb-3 border shadow-none"
-                    style="max-width: 540px;"
+                    className="card mb-3 border-0 shadow-none border-top my-2 "
+                    style="width: 18rem;"
                     key={index}
                   >
                     <div className="row no-gutters">
-                      {/* <div className="col-md-4">
+                      <div className="col-md-3 m-0 pr-2">
                         <img
-                          src="https://via.placeholder.com/150"
+                          src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGVuc3xlbnwwfHwwfHw%3D&w=1000&q=80"
                           className="card-img"
                           alt="..."
                         />
-                      </div> */}
-                      <div className="col-md-12">
-                        <div className="card-body">
-                          <h5 className="card-title">
-                            <a href="#">News Alert Title</a>
-                          </h5>
-                          <p className="card-text">
-                            This is a wider card with supporting text below as a
-                            natural lead-in to additional content. This content
-                            is a little bit longer.
+                      </div>
+
+                      <div className="col-md-9 p-0 m-0">
+                        <div className="card-body p-0 m-0">
+                          <p className="card-title fs-6 m-0">
+                            <small>
+                              <a href="#">News Alert Title</a>
+                            </small>
                           </p>
-                          <p className="card-text">
-                            <small className="text-muted">
-                              Last updated 3 mins ago
+                          <p className="card-text fs-6">
+                            <small>
+                              This is a wider card with supporting text below as
+                              a natural lead-in to additional content.
                             </small>
                           </p>
                         </div>
                       </div>
                     </div>
-
-                    {/* <div className="row g-0" kay={index}>
-                      <div className="col-md-12">
-                        <div className="card-body">
-                          <h5 className="card-title">Card title</h5>
-                          <p className="card-text">
-                            This is a wider card with supporting text below as a
-                            natural lead-in to additional content.
-                          </p>
-                          <p className="card-text">
-                            <small className="text-muted">
-                              Last updated 3 mins ago
-                            </small>
-                          </p>
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
                 );
               }
@@ -92,25 +74,3 @@ const NewAlert = () => {
 };
 
 export default NewAlert;
-
-{
-  /* <MDBRow kay={index}>
-                      <MDBCol>
-                        <MDBCard className="col-sm-12">
-                          <MDBCardImage
-                            src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                            position="top"
-                            alt="..."
-                          />
-                          <MDBCardBody>
-                            <MDBCardTitle>News Title</MDBCardTitle>
-                            <MDBCardText>
-                              With supporting text below as a natural lead-in to
-                              additional content.
-                            </MDBCardText>
-                            <MDBBtn href="#">Go somewhere</MDBBtn>
-                          </MDBCardBody>
-                        </MDBCard>
-                      </MDBCol>
-                    </MDBRow> */
-}

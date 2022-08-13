@@ -15,6 +15,7 @@ const AddNews = () => {
   const [summery, setSummery] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
+  const [status, setStatus] = useState("");
 
   function addNews(e) {
     const form = e.currentTarget;
@@ -32,6 +33,7 @@ const AddNews = () => {
         summery,
         content,
         image,
+        status,
       };
 
       axios
@@ -42,6 +44,7 @@ const AddNews = () => {
           setSummery("");
           setContent("");
           setImage("");
+          setStatus("");
           setValidated(false);
         })
         .catch((err) => {
@@ -141,6 +144,18 @@ const AddNews = () => {
                 <Form.Control.Feedback type="invalid">
                   Please provide a Image Url
                 </Form.Control.Feedback>
+              </div>
+              <div className="form-check form-switch">
+                <label>Status</label>
+                <input
+                  onChange={(e) => {
+                    setStatus(e.target.value);
+                  }}
+                  className="form-check-input"
+                  type="checkbox"
+                  value={status}
+                  id="defaultCheck1"
+                />
               </div>
               <Button
                 type="submit"
