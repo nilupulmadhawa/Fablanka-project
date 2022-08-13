@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
 
 const NewsTable = () => {
   const [news, setNews] = useState([]);
+  const [status, setStatus] = useState(isChacked);
 
   const getNews = async () => {
     try {
       const response = await axios.get("http://localhost:8000/api/news/");
       setNews(response.data);
+      
       // console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -55,7 +57,7 @@ const NewsTable = () => {
                   <td>{curElem.title}</td>
                   <td>{curElem.summery}</td>
                   <td>
-                    <select onChange={isChacked}>
+                    <select onChange={isChacked} value={status}>
                       <option disabled selected>
                         Select your option
                       </option>

@@ -1,8 +1,26 @@
 import React from "react";
 import Slider from "react-slick";
+import { useEffect, useState } from "react";
 import { HomeWrapper } from "../style";
 
 const NewAlert = () => {
+  const [news, setNews] = useState([]);
+
+  const getNews = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/api/news/");
+      setNews(response.data);
+      // console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getNews();
+  }, []);
+
+
   const settings = {
     dots: false,
     infinite: true,
@@ -29,8 +47,8 @@ const NewAlert = () => {
         <HomeWrapper>
           {/* <h2 className="text-center">News</h2> */}
           <Slider {...settings} className="m-1 mt-2 py-2">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(
-              (item, index) => {
+            {news.map(
+              (news, index) => {
                 return (
                   <div
                     className="card mb-3 border-0 shadow-none border-top my-2 "
@@ -56,7 +74,8 @@ const NewAlert = () => {
                           <p className="card-text fs-6">
                             <small>
                               This is a wider card with supporting text below as
-                              a natural lead-in to additional content.
+                              a natural lead-in to additional content. This is a
+                              wider card with supporting text below as a.
                             </small>
                           </p>
                         </div>
