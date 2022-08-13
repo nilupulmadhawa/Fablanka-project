@@ -8,8 +8,9 @@ const NewsTable = () => {
 
   const getNews = async () => {
     try {
-      const response = await axios.get("https://api.github.com/users");
+      const response = await axios.get("http://localhost:8000/api/news/");
       setNews(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -20,7 +21,12 @@ const NewsTable = () => {
   }, []);
 
   const isChacked = (e) => {
-    console.log(e.target.checked);
+    console.log(e.target.value);
+    if (e.target.value === "true") {
+      return "checked";
+    } else {
+      return "";
+    }
   };
 
   return (
@@ -38,25 +44,24 @@ const NewsTable = () => {
             </tr>
           </thead>
           {news.map((curElem) => {
+            console.log(curElem.status);
             return (
               <tbody>
                 <tr>
                   <th scope="row">{curElem.id}</th>
                   <td className="text-center">
-                    <img src={curElem.avatar_url} width={100} height={100} />
+                    <img src={curElem.image} width={100} height={100} />
                   </td>
-                  <td>{curElem.login}</td>
-                  <td>{curElem.login}</td>
+                  <td>{curElem.title}</td>
+                  <td>{curElem.summery}</td>
                   <td>
-                    <div className="form-check form-switch">
-                      <input
-                        onClick={isChacked}
-                        className="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="defaultCheck1"
-                      />
-                    </div>
+                    <select onChange={isChacked}>
+                      <option disabled selected>
+                        Select your option
+                      </option>
+                      <option value={true}>Active</option>
+                      <option value={false}>Inactive</option>
+                    </select>
                   </td>
                   <td className="text-center">
                     <div class="btn-group-vertical">
