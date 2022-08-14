@@ -1,18 +1,27 @@
 import React from "react";
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { data } from "../data";
 
 const NewsTable = () => {
   const [news, setNews] = useState([]);
-  const [status, setStatus] = useState(isChacked);
+  // const [status, setStatus] = useState("");
+
+  //check setStatus using console.log(status)
+
+  // useEffect(() => {
+  //   console.log(setStatus);
+  //   getNews();
+  // }, []);
+
+  // const [status, setStatus] = useState(isChacked);
 
   const getNews = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/news/");
+      const response = await axios.get("http://localhost:8000/api/newspage/");
       setNews(response.data);
-      
-      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -22,12 +31,55 @@ const NewsTable = () => {
     getNews();
   }, []);
 
-  const isChacked = (e) => {
-    console.log(e.target.value);
-    if (e.target.value === "true") {
-      return "checked";
+  // using isCheck function and update the status in database
+  const onChange = (id, status) => {
+    console.log(id, status);
+    axios.get(`http://localhost:8000/api/newspage/${id}`).then((res) => {
+      // console.log(res.data);
+      console.log(res.data.title);
+    });
+    //if status is true then set status to false
+    //if status is false then set status to true
+
+    if (status) {
+      status = false;
     } else {
-      return "";
+      status = true;
+    }
+    const news = {
+      status: status,
+    };
+    console.log(news);
+    console.log(status);
+    axios
+      .put(`http://localhost:8000/api/newspage/${id}/`, news)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // const news = {
+    //   id: id,
+    // };
+    // axios
+    //   .put(`http://localhost:8000/api/newspage/${id}/`, news)
+    //   .then((res) => {
+    //     console.log(res);
+    //     console.log(res.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+  };
+
+  const onDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8000/api/newspage/${id}`);
+      getNews();
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -57,20 +109,28 @@ const NewsTable = () => {
                   <td>{curElem.title}</td>
                   <td>{curElem.summery}</td>
                   <td>
-                    <select onChange={isChacked} value={status}>
-                      <option disabled selected>
-                        Select your option
-                      </option>
+                    <select
+                      onChange={() => onChange(curElem.id, curElem.status)}
+                      defaultValue={curElem.status}
+                    >
                       <option value={true}>Active</option>
                       <option value={false}>Inactive</option>
                     </select>
                   </td>
                   <td className="text-center">
                     <div class="btn-group-vertical">
-                      <button type="button" className="btn btn-warning">
-                        Edit
-                      </button>
-                      <button type="button" className="btn btn-danger">
+                      <Link href={"/admin/news/" + curElem.id}>
+                        <button type="button" className="btn btn-warning">
+                          Edit
+                        </button>
+                      </Link>
+                      <button
+                        type="button"
+                        className="btn btn-danger"
+                        onClick={() => {
+                          onDelete(curElem.id);
+                        }}
+                      >
                         Delete
                       </button>
                     </div>

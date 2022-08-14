@@ -68,7 +68,7 @@ const ImageSlider = () => {
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev"
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="" aria-hidden="true"></span>
         <span className="visually-hidden">Previous</span>
       </button>
       <button
@@ -77,7 +77,7 @@ const ImageSlider = () => {
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="next"
       >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
     </div>

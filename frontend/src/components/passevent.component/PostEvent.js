@@ -1,9 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
-import { data } from "./data.js";
+import { data } from "../data.js";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { HomeWrapper } from "../components/style";
+import { HomeWrapper } from "../style";
 import styles from "./PostEvent.module.css";
 
 import {
@@ -40,7 +40,7 @@ import {
 
 const PostEvent = () => {
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 4,

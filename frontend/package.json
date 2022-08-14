@@ -19,6 +19,7 @@
     "aos": "^2.3.4",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
+    "ckeditor5-custom-build": "file:ckeditor5",
     "cookie": "^0.4.1",
     "mdb-react-ui-kit": "^4.1.0",
     "mdbreact": "^4.6.1",

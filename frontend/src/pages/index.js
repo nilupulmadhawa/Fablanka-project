@@ -6,7 +6,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import styles from "../styles/index.module.css";
 
-const PostEvent = dynamic(() => import("../components/PostEvent"), {
+const PostEvent = dynamic(() => import("../components/passevent.component/PostEvent"), {
   ssr: false,
 });
 
@@ -62,7 +62,7 @@ const homePage = () => {
     >
       {/* <div className=".container-xxl"> */}
       <div data-aos="fade-right" className="row">
-        <div className="col-md-8 rounded-3">
+        <div className="col-lg-8 rounded-3">
           <ImageSlider />
           {/* <div className="d-none d-sm-block d-md-none">
             <a href="/#" role="button" aria-disabled="true">
@@ -70,7 +70,7 @@ const homePage = () => {
             </a>
           </div> */}
         </div>
-        <div data-aos="fade-left" className="col-md-4 d-none d-sm-block">
+        <div data-aos="fade-left" className="col-lg-4 d-none d-sm-block">
           <div>
             {/* <Link href="/#" className="d-none d-lg-block">
               Click to news

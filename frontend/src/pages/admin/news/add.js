@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import Layout from "../../hocs/Layout";
+import Layout from "../../../hocs/Layout";
 import dynamic from "next/dynamic";
 
 const AddNews = dynamic(
-  () => import("../../components/news.component/AddNews"),
+  () => import("../../../components/news.component/AddNews"),
   {
     ssr: false,
   }

@@ -8,7 +8,7 @@ from django.db import models
 
 class newspage(models.Model):
     title = models.CharField(max_length=200)
-    summrey = models.TextField()
+    summery = models.TextField()
     content = models.TextField()
     image =models.TextField()
-    status = models.BooleanField(default=False)
+    status = models.BooleanField(default=True)
