@@ -45,10 +45,10 @@ const navbar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/admin/addnews">
+        <Link href="/admin/news/add">
           <a
             className={
-              router.pathname === "/admin/addnews"
+              router.pathname === "/admin/news/add"
                 ? "nav-link active"
                 : "nav-link"
             }
@@ -58,10 +58,10 @@ const navbar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/admin/allnews">
+        <Link href="/admin/news/all">
           <a
             className={
-              router.pathname === "/admin/allnews"
+              router.pathname === "/admin/news/all"
                 ? "nav-link active"
                 : "nav-link"
             }
@@ -200,7 +200,7 @@ const navbar = () => {
       className={`navbar navbar-expand-lg navbar-dark bg-dark sticky-sm-top ${Styles.navbar}`}
     >
       <div className="container-fluid">
-        <Link href="/">
+        <Link href="#">
           <a className="navbar-brand">FABLAB</a>
         </Link>
         <button

@@ -1,4 +1,5 @@
 // news edit component
+
 import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
@@ -7,6 +8,7 @@ import Editor from "ckeditor5-custom-build/build/ckeditor";
 import axios from "axios";
 
 const EditNews = (props) => {
+
   const id = props.id.newsID;
 
   //get the id from the url
@@ -128,7 +130,9 @@ const EditNews = (props) => {
       <div className="body">
         <div className="container1">
           <div className="col-md-8 mt-4 mx-auto">
-            <h2 className="h3 mb-3 font-weight-normal text-center">Add News</h2>
+            <h2 className="h3 mb-3 font-weight-normal text-center">
+              Edit News
+            </h2>
             <Form noValidate validated={validated} onSubmit={onSubmit}>
               <div className="form-group" style={{ marginBottom: "15px" }}>
                 <label className="form-label" style={{ marginBottom: "5px" }}>

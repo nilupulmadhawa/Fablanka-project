@@ -10,6 +10,7 @@ import axios from "axios";
 // import ImageInsert from "@ckeditor/ckeditor5-image/src/imageinsert";
 
 const AddNews = () => {
+
   const [validated, setValidated] = useState(false);
 
   const [title, setTitle] = useState("");

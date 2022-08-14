@@ -4,14 +4,14 @@ import Layout from "../../../hocs/Layout";
 import NewsTable from "../../../components/news.component/NewsTable";
 
 const AllNews = () => {
-  // const router = useRouter();
+  const router = useRouter();
 
-  // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  // const user = useSelector((state) => state.auth.user);
-  // const loading = useSelector((state) => state.auth.loading);
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const user = useSelector((state) => state.auth.user);
+  const loading = useSelector((state) => state.auth.loading);
 
-  // if (typeof window !== "undefined" && !loading && !isAuthenticated)
-  //   router.push("/login");
+  if (typeof window !== "undefined" && !loading && !isAuthenticated)
+    router.push("/login");
 
   return (
     <>
