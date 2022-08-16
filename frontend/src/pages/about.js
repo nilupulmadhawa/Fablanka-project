@@ -17,11 +17,9 @@ const About = () => {
         >
           <div className="row">
             <div className="col-md-8">
-              <h1 className="text-center-top-0 mb-4">About</h1>
+              {/* <h1 className="text-center-top-0 mb-4">About</h1> */}
               <p className="h4 mb-3">
-                <a href="https://fablanka.org/">
-                  A Globally Connected Sri Lankan Social Enterprise
-                </a>
+                A Globally Connected Sri Lankan Social Enterprise
               </p>
 
               <p className={`text-justify ${Styles.qcont}`}>
@@ -77,9 +75,7 @@ const About = () => {
           <div className="row">
             <div className="col-12">
               <p className="text-left h4 mb-3">
-                <a href="https://fablanka.org/">
-                  Towards a Makers’ society through Community Outreach
-                </a>
+                Towards a Makers’ society through Community Outreach
               </p>
               <p className={`card-justify ${Styles.qcont}`}>
                 Developed as a community outreach project, FabLanka allows local
@@ -110,10 +106,8 @@ const About = () => {
           </div>
           <div className="row">
             <div className="col-md-12 mb-5">
-              <p className="text-left h4 mb-3">
-                <a href="https://fablanka.org/">
-                  Towards a Greener Economy that protects the environment
-                </a>
+              <p className="text-left h4 mt-5 mb-3">
+                Towards a Greener Economy that protects the environment
               </p>
               <p className={`card-justify ${Styles.qcont}`}>
                 The environmental degradation caused by modern economies is
@@ -139,7 +133,7 @@ const About = () => {
           </div>
         </div>
         <div data-aos="fade-up" className="row">
-          <h1 className="text-center">Our Team</h1>
+          <h1 className="text-center text-3xl">Our Team</h1>
           <OurTeam />
         </div>
       </>

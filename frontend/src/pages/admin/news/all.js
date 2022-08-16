@@ -5,13 +5,14 @@ import NewsTable from "../../../components/news.component/NewsTable";
 
 const AllNews = () => {
   const router = useRouter();
-
+  console.log(router.pathname);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const user = useSelector((state) => state.auth.user);
   const loading = useSelector((state) => state.auth.loading);
 
-  if (typeof window !== "undefined" && !loading && !isAuthenticated)
-    router.push("/login");
+  if (typeof window !== "undefined" && !loading && !isAuthenticated);
+
+  //if refresh page, redirect to router.pathname
 
   return (
     <>

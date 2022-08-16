@@ -35,7 +35,7 @@ const LoginPage = () => {
   };
 
   if (typeof window !== "undefined" && isAuthenticated)
-    router.push("/admin/dashboard");
+    router.push("admin/dashboard");
 
   return (
     <Layout
@@ -79,7 +79,10 @@ const LoginPage = () => {
             <Loader type="Oval" color="#00bfff" width={50} height={50} />
           </div>
         ) : (
-          <button className="btn btn-primary mt-5" type="submit">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
+            type="submit"
+          >
             Login
           </button>
         )}

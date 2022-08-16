@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import Head from "next/head";
 import { Provider } from "react-redux";
 import { useStore } from "../store";
+import "../styles/globals.css";
 
 const App = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState);

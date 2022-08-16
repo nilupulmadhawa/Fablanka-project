@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { data } from "../data";
+import { API_URL } from '../../config/index';
 
 const NewsTable = () => {
   const [news, setNews] = useState([]);
@@ -20,7 +21,7 @@ const NewsTable = () => {
 
   const getNews = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/newspage/");
+      const response = await axios.get(`${API_URL}/api/newspage/`);
       setNews(response.data);
     } catch (error) {
       console.log(error);
@@ -34,7 +35,7 @@ const NewsTable = () => {
   // using isCheck function and update the status in database
   const onChange = (id, status) => {
     console.log(id, status);
-    axios.get(`http://localhost:8000/api/newspage/${id}`).then((res) => {
+    axios.get(`${API_URL}/api/newspage/${id}`).then((res) => {
       // console.log(res.data);
       console.log(res.data.title);
     });
@@ -75,11 +76,17 @@ const NewsTable = () => {
   };
 
   const onDelete = async (id) => {
-    try {
-      await axios.delete(`http://localhost:8000/api/newspage/${id}`);
-      getNews();
-    } catch (error) {
-      console.log(error);
+    if (
+      window.confirm(
+        "Are you sure you want to delete this news? This action cannot be undone."
+      )
+    ) {
+      try {
+        await axios.delete(`http://localhost:8000/api/newspage/${id}`);
+        getNews();
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -120,12 +127,9 @@ const NewsTable = () => {
                   <td className="text-center">
                     <div class="btn-group-vertical">
                       <Link href={"/admin/news/" + curElem.id}>
-                        <button type="button" className="btn btn-warning">
-                          Edit
-                        </button>
+                        <button className="btn btn-warning">Edit</button>
                       </Link>
                       <button
-                        type="button"
                         className="btn btn-danger"
                         onClick={() => {
                           onDelete(curElem.id);

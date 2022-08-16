@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Layout from "../../hocs/Layout";
 import dynamic from "next/dynamic";
+import { API_URL } from "../../config/index";
 
 const SingleNews = dynamic(
   () => import("../../components/news.component/SingleNews"),
@@ -19,6 +20,7 @@ const news = (props) => {
           title={props.news.title}
           summery={props.news.summery}
           content={props.news.content}
+          image={props.news.image}
         />
       </div>
     </Layout>
@@ -28,9 +30,7 @@ const news = (props) => {
 //getting props data from server
 news.getInitialProps = async (context) => {
   const newsID = context.query.id;
-  const response = await axios.get(
-    `http://localhost:8000/api/newspage/${newsID}`
-  );
+  const response = await axios.get(`${API_URL}/api/newspage/${newsID}`);
   return { news: response.data };
 };
 

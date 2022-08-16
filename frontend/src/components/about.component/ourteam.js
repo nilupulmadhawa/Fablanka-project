@@ -21,16 +21,12 @@ const OurTeam = () => {
         {users.map((curElem) => {
           return (
             <div className={Styles.card_item} key={curElem.id}>
-              <div className={Styles.card_inner}>
-                <img src={curElem.avatar_url} alt="" />
-                <div className={Styles.userName}>{curElem.login}</div>
-                <div className={Styles.userUrl}>
-                  <p>{}</p>
+              <a href="#">
+                <div className={Styles.card_inner}>
+                  <img src={curElem.avatar_url} />
+                  <div className={Styles.userName}>{curElem.login}</div>
                 </div>
-                <a href={`/about/[id]`} as={`/about/${curElem.id}`}>
-                  <button className={Styles.seeMore}>See More</button>
-                </a>
-              </div>
+              </a>
             </div>
           );
         })}

@@ -6,9 +6,9 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 // import {Editor as ClassicEditor} from 'ckeditor5-custom-build/build/ckeditor';
 import Editor from "ckeditor5-custom-build/build/ckeditor";
 import axios from "axios";
+import { API_URL } from "../../config/index";
 
 const EditNews = (props) => {
-
   const id = props.id.newsID;
 
   //get the id from the url
@@ -27,9 +27,7 @@ const EditNews = (props) => {
   useEffect(() => {
     const getNews = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8000/api/newspage/${id}`
-        );
+        const response = await axios.get(`${API_URL}/api/newspage/${id}`);
         setTitle(response.data.title);
         setSummery(response.data.summery);
         setContent(response.data.content);

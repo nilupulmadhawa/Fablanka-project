@@ -31,49 +31,220 @@ const navbar = () => {
           </a>
         </Link>
       </li>
-      <li className="nav-item px-3">
-        <Link href="/admin/register">
-          <a
-            className={
-              router.pathname === "/admin/register"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            Register
-          </a>
-        </Link>
-      </li>
-      <li className="nav-item px-3">
-        <Link href="/admin/news/add">
-          <a
-            className={
-              router.pathname === "/admin/news/add"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            Add News
-          </a>
-        </Link>
-      </li>
-      <li className="nav-item px-3">
-        <Link href="/admin/news/all">
-          <a
-            className={
-              router.pathname === "/admin/news/all"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            News
-          </a>
-        </Link>
-      </li>
-      <li className="nav-item px-3">
-        <a className="nav-link" href="#!" onClick={logoutHandler}>
-          Logout
+
+      {/* home Pages */}
+
+      <li className="nav-item dropdown px-3 ">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Home Pages
         </a>
+        <ul
+          className="dropdown-menu dropdown-menu-dark"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li className="nav-item dropdown px-3">
+            <li className="nav-item px-3">
+              <Link href="/">
+                <a
+                  className={
+                    router.pathname === "/" ? "nav-link active" : "nav-link"
+                  }
+                >
+                  Home
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item px-3">
+              <Link href="/industrytec">
+                <a
+                  className={
+                    router.pathname === "/industrytec"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Industry 4.0 Technologies
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item px-3">
+              <Link href="/education">
+                <a
+                  className={
+                    router.pathname === "/education"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Education
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item px-3">
+              <Link href="/project">
+                <a
+                  className={
+                    router.pathname === "/project"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Project
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item dropdown px-3 ">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                FabLabs
+              </a>
+              <ul
+                className="dropdown-menu dropdown-menu-dark"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li className="nav-item dropdown px-2">
+                  <Link href="/fablabs/makadura">
+                    <a
+                      className={
+                        router.pathname === "/fablabs/makadura"
+                          ? "nav-link active"
+                          : "nav-link"
+                      }
+                    >
+                      FabLab Makadura
+                    </a>
+                  </Link>
+                </li>
+                <li className="nav-item dropdown px-2">
+                  <Link href="/#">
+                    <a
+                      className={
+                        router.pathname === "/#"
+                          ? "nav-link active"
+                          : "nav-link"
+                      }
+                    >
+                      Free education
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Something else here
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li className="nav-item px-3">
+              <Link href="/about">
+                <a
+                  className={
+                    router.pathname === "/about"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  About Us
+                </a>
+              </Link>
+            </li>
+          </li>
+        </ul>
+      </li>
+
+      {/* News admin pannel links */}
+      <li className="nav-item dropdown px-3 ">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          News Details
+        </a>
+        <ul
+          className="dropdown-menu dropdown-menu-dark"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li className="nav-item px-3">
+            <Link href="/admin/news/add">
+              <a
+                className={
+                  router.pathname === "/admin/news/add"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Add News
+              </a>
+            </Link>
+          </li>
+          <li className="nav-item px-3">
+            <Link href="/admin/news/all">
+              <a
+                className={
+                  router.pathname === "/admin/news/all"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                News
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </li>
+
+      {/* logout and register links */}
+      <li className="nav-item dropdown px-3 ">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Login
+        </a>
+        <ul
+          className="dropdown-menu dropdown-menu-dark"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li className="nav-item px-3">
+            <Link href="/admin/register">
+              <a
+                className={
+                  router.pathname === "/admin/register"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Register
+              </a>
+            </Link>
+          </li>
+          <li className="nav-item px-3">
+            <a className="nav-link" href="#!" onClick={logoutHandler}>
+              Logout
+            </a>
+          </li>
+        </ul>
       </li>
     </>
   );

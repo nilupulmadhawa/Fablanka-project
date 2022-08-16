@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { HomeWrapper } from "../style";
+import style from "../../styles/NewAlert.module.css";
+import { API_URL } from "../../config/index";
 
 const NewAlert = () => {
   const [news, setNews] = useState([]);
@@ -11,8 +13,9 @@ const NewAlert = () => {
 
   const getNews = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/newspage/");
-      setNews(response.data);
+      const response = await axios.get(`${API_URL}/api/newspage/`);
+      //only status is true data will be shown
+      setNews(response.data.filter((item) => item.status === true)); //only status is true data will be shown
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -25,7 +28,7 @@ const NewAlert = () => {
 
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
@@ -36,12 +39,19 @@ const NewAlert = () => {
     swipeToSlide: true,
     responsive: [
       {
+        breakpoint: 1290,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          infinite: true,
+        },
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -70,7 +80,7 @@ const NewAlert = () => {
   };
   return (
     <>
-      <div className="container">
+      <div className={`container ${style.container}`}>
         <HomeWrapper>
           {/* <h2 className="text-center">News</h2> */}
           <Slider {...settings} className="m-1 mt-2 py-2">
@@ -86,19 +96,17 @@ const NewAlert = () => {
                       <img src={curElem.image} className="card-img" alt="..." />
                     </div>
 
-                    <div className="col-sm-9 p-0 m-0">
-                      <div className="card-body p-0 m-0">
-                        <p className="card-title fs-6 m-0 fw-normal">
-                          <small>
-                            <Link href={"/news/" + curElem.id}>
-                              {curElem.title}
-                            </Link>
-                          </small>
-                        </p>
-                        <p className="card-text fs-6 lh-1 fw-light">
-                          <small>{curElem.summery}</small>
-                        </p>
-                      </div>
+                    <div className="col-sm-9 p-0 m-0 ">
+                      <a href={"/news/" + curElem.id} className="no-underline hover:underline">
+                        <div className="card-body p-0 m-0">
+                          <p className="card-title text-sm text-black">
+                            {curElem.title}
+                          </p>
+                          <p className="card-text lh-1 text-xs text-slate-500">
+                            {curElem.summery}
+                          </p>
+                        </div>
+                      </a>
                     </div>
                   </div>
                 </div>

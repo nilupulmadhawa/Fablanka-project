@@ -6,11 +6,11 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 // import {Editor as ClassicEditor} from 'ckeditor5-custom-build/build/ckeditor';
 import Editor from "ckeditor5-custom-build/build/ckeditor";
 import axios from "axios";
+import { API_URL } from "../../config/index";
 // import { API_URL } from "../../../config";
 // import ImageInsert from "@ckeditor/ckeditor5-image/src/imageinsert";
 
 const AddNews = () => {
-
   const [validated, setValidated] = useState(false);
 
   const [title, setTitle] = useState("");
@@ -39,7 +39,7 @@ const AddNews = () => {
       };
 
       axios
-        .post("http://localhost:8000/api/newspage/", newNews)
+        .post(`${API_URL}/api/newspage/`, newNews)
         .then(() => {
           alert("New News Added");
           setTitle("");
@@ -161,14 +161,6 @@ const AddNews = () => {
                   {" "}
                   Add News Content{" "}
                 </label>
-                {/* <CKEditor
-                  editor={ClassicEditor}
-                  data={content}
-                  onChange={(event, editor) => {
-                    const data = editor.getData();
-                    setContent(data);
-                  }}
-                /> */}
                 <CKEditor
                   editor={Editor}
                   data={content}
@@ -189,14 +181,14 @@ const AddNews = () => {
                 />
               </div>
 
-              <Button
+              <button
                 type="submit"
-                className="btn btn-success float-right"
+                className="btn btn-blue btn-block"
                 style={{ marginTop: "15px", marginBottom: "15px" }}
               >
                 <i className="far fa-check-square"></i>
                 &nbsp; Save
-              </Button>
+              </button>
             </Form>
           </div>
         </div>
