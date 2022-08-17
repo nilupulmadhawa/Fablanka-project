@@ -17,6 +17,12 @@ const LoginPage = () => {
   });
 
   const { username, password } = formData;
+  const userlogin = useSelector((state) => state.auth.userLoginFailed);
+  // console.log(userlogin);
+  useEffect(() => {
+    console.log(userlogin);
+    if (userlogin === true) alert("login failed");
+  }, [userlogin]);
 
   useEffect(() => {
     if (dispatch && dispatch !== null && dispatch !== undefined)

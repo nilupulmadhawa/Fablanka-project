@@ -40,24 +40,6 @@ const EditNews = (props) => {
     getNews();
   }, []);
 
-  //update the news in the database
-
-  //set update news data to the state
-  // const onChange = (e) => {
-  //   const name = e.target.name;
-  //   const value = e.target.value;
-  //   if (name === "title") {
-  //     setTitle(value);
-  //   } else if (name === "summery") {
-  //     setSummery(value);
-  //   } else if (name === "content") {
-  //     setContent(value);
-  //   } else if (name === "image") {
-  //     setImage(value);
-  //   } else if (name === "status") {
-  //     setStatus(value);
-  //   }
-  // };
 
   // update news data to the database
   const onSubmit = (e) => {
@@ -86,42 +68,6 @@ const EditNews = (props) => {
     }
     setValidated(true);
   };
-
-  // function editNews(e) {
-  //   const form = e.currentTarget;
-
-  //   if (form.checkValidity() === false) {
-  //     e.preventDefault();
-
-  //     setValidated(true);
-  //     e.stopPropagation();
-  //   } else {
-  //     e.preventDefault();
-
-  //     const news = {
-  //       title,
-  //       summery,
-  //       content,
-  //       image,
-  //       status,
-  //     };
-
-  //     axios
-  //       .put(`http://localhost:8000/api/newspage/${props.id}/`, news)
-  //       .then(() => {
-  //         alert("New News Added");
-  //         setTitle("");
-  //         setSummery("");
-  //         setContent("");
-  //         setImage("");
-  //         setStatus(true);
-  //         setValidated(false);
-  //       })
-  //       .catch((err) => {
-  //         alert(err);
-  //       });
-  //   }
-  // }
 
   return (
     <>

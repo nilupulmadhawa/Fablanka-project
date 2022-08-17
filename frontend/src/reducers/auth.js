@@ -20,7 +20,8 @@ const initialState = {
     user: null,
     isAuthenticated: false,
     loading: false,
-    register_success: false
+    register_success: false,
+    userLoginFailed: false,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -49,7 +50,8 @@ const authReducer = (state = initialState, action) => {
         case LOGIN_FAIL:
             return {
                 ...state,
-                isAuthenticated: false
+                isAuthenticated: false,
+                userLoginFailed: true
             }
         case LOGOUT_SUCCESS:
             return {

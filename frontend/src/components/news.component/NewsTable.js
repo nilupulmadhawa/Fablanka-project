@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { data } from "../data";
-import { API_URL } from '../../config/index';
+import { API_URL } from "../../config/index";
 
 const NewsTable = () => {
   const [news, setNews] = useState([]);
@@ -35,44 +35,18 @@ const NewsTable = () => {
   // using isCheck function and update the status in database
   const onChange = (id, status) => {
     console.log(id, status);
-    axios.get(`${API_URL}/api/newspage/${id}`).then((res) => {
-      // console.log(res.data);
-      console.log(res.data.title);
-    });
     //if status is true then set status to false
     //if status is false then set status to true
-
-    if (status) {
-      status = false;
-    } else {
-      status = true;
-    }
-    const news = {
-      status: status,
-    };
-    console.log(news);
-    console.log(status);
     axios
-      .put(`http://localhost:8000/api/newspage/${id}/`, news)
+      .patch(`http://localhost:8000/api/newspage/${id}/`, { status: status })
       .then((res) => {
         console.log(res);
+        //alert for change status successfully
+        alert("Change status successfully");
       })
       .catch((err) => {
         console.log(err);
       });
-
-    // const news = {
-    //   id: id,
-    // };
-    // axios
-    //   .put(`http://localhost:8000/api/newspage/${id}/`, news)
-    //   .then((res) => {
-    //     console.log(res);
-    //     console.log(res.data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   };
 
   const onDelete = async (id) => {
@@ -117,7 +91,7 @@ const NewsTable = () => {
                   <td>{curElem.summery}</td>
                   <td>
                     <select
-                      onChange={() => onChange(curElem.id, curElem.status)}
+                      onChange={(e) => onChange(curElem.id, e.target.value)}
                       defaultValue={curElem.status}
                     >
                       <option value={true}>Active</option>
