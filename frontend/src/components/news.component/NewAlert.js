@@ -29,7 +29,7 @@ const NewAlert = () => {
   const settings = {
     dots: false,
     infinite: false,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
@@ -80,7 +80,7 @@ const NewAlert = () => {
   };
   return (
     <>
-      <div className={`container ${style.container}`}>
+      <div className={`container-fluid ${style.container}`}>
         <HomeWrapper>
           {/* <h2 className="text-center">News</h2> */}
           <Slider {...settings} className="m-1 mt-2 py-2">

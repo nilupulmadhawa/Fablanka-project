@@ -63,7 +63,7 @@ const homePage = () => {
       title="FabLanka | Home"
       content="Home page for this auth tutorial on httpOnly cookies with json web tokens"
     >
-      <div className="container">
+      <div className="container-fuild">
         <div data-aos="fade-right" className="row">
           <div className="col-lg-8 rounded-3">
             <ImageSlider />
