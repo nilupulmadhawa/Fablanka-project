@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 import styles from "../styles/index.module.css";
 
 const PostEvent = dynamic(
-  () => import("../components/passevent.component/PastEvent"),
+  () => import("../components/pastevent.component/PastEvent"),
   {
     ssr: false,
   }

@@ -28,7 +28,7 @@ const NewAlert = () => {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
@@ -97,12 +97,12 @@ const NewAlert = () => {
                     </div>
 
                     <div className="col-sm-9 p-0 m-0 ">
-                      <a href={"/news/" + curElem.id} className="no-underline hover:underline">
-                        <div className="card-body p-0 m-0">
-                          <p className="card-title text-sm text-black">
+                      <a href={"/news/" + curElem.id} className="no-underline">
+                        <div className="card-body py-0 pl-0 ">
+                          <p className="card-title text-sm font-semibold text-black hover:text-red-500">
                             {curElem.title}
                           </p>
-                          <p className="card-text lh-1 text-xs text-slate-500">
+                          <p className="card-text lh-1 text-sm text-slate-500 hover:text-red-500 line-clamp-2 hover:line-clamp-none duration-100 ease-in-out">
                             {curElem.summery}
                           </p>
                         </div>

@@ -7,7 +7,14 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+
+  variants: {
+    extend: {
+      lineClamp: ["responsive", "hover", "focus"],
+    },
+  },
+
+  plugins: [require("@tailwindcss/line-clamp")],
   corePlugins: {
     preflight: false,
   },
