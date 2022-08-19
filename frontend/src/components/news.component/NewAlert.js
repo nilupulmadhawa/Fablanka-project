@@ -29,7 +29,7 @@ const NewAlert = () => {
   const settings = {
     dots: false,
     infinite: false,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
@@ -41,31 +41,48 @@ const NewAlert = () => {
       {
         breakpoint: 1290,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 2,
           infinite: true,
+          speed: 1000,
+          autoplaySpeed: 3000,
+          vertical: true,
+          verticalSwiping: true,
+          swipeToSlide: true,
         },
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 2,
           infinite: true,
+          speed: 1000,
+          autoplaySpeed: 3000,
+          vertical: true,
+          verticalSwiping: true,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
+          speed: 1000,
+          autoplaySpeed: 3000,
+          vertical: true,
+          verticalSwiping: true,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
+          speed: 1000,
+          autoplaySpeed: 3000,
+          vertical: true,
+          verticalSwiping: true,
         },
       },
     ],
@@ -80,7 +97,7 @@ const NewAlert = () => {
   };
   return (
     <>
-      <div className={`container ${style.container}`}>
+      <div className={`container-fluid ${style.container}`}>
         <HomeWrapper>
           {/* <h2 className="text-center">News</h2> */}
           <Slider {...settings} className="m-1 mt-2 py-2">
@@ -92,7 +109,7 @@ const NewAlert = () => {
                   key={curElem.id}
                 >
                   <div className="row no-gutters">
-                    <div className="col-sm-3 m-0 pr-2">
+                    <div className="col-3 m-0 pr-2">
                       <img
                         src={curElem.image}
                         className="card-img image-fluid"
@@ -100,7 +117,7 @@ const NewAlert = () => {
                       />
                     </div>
 
-                    <div className="col-sm-9 p-0 m-0 ">
+                    <div className="col-9 p-0 m-0 ">
                       <a href={"/news/" + curElem.id} className="no-underline">
                         <div className="card-body py-0 pl-0 ">
                           <p className="card-title text-sm font-semibold text-black hover:text-red-500">
