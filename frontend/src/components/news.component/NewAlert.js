@@ -93,7 +93,11 @@ const NewAlert = () => {
                 >
                   <div className="row no-gutters">
                     <div className="col-sm-3 m-0 pr-2">
-                      <img src={curElem.image} className="card-img" alt="..." />
+                      <img
+                        src={curElem.image}
+                        className="card-img image-fluid"
+                        alt="..."
+                      />
                     </div>
 
                     <div className="col-sm-9 p-0 m-0 ">
