@@ -1,9 +1,13 @@
 import Layout from "../../hocs/Layout";
+import MakanduraTeam from '../../components/makandura.component/makandurateam';
+
 
 const LabMakadura = () => {
   return (
     <Layout title="FabLanka | Makadura" content="Fablab Makadura page">
-      <h1>FabLab Makadura</h1>
+      <div>
+        <MakanduraTeam />
+      </div>
     </Layout>
   );
 };
