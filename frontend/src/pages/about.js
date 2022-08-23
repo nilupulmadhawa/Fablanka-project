@@ -52,10 +52,8 @@ const About = () => {
                 </h5>
                 <div className="card-body">
                   <p className={`card-justify ${Styles.qcont}`}>
-                    build almost anything that could improve the quality of
-                    life. Provide a platform of highest standard to exchange
-                    knowledge, ideas and expertise on existing and emerging
-                    Technologies.
+                    Establish a technologically advanced and globally connected
+                    makers' society in Sri Lanka.
                   </p>
                 </div>
               </div>
@@ -65,8 +63,10 @@ const About = () => {
                 </h5>
                 <div className="card-body">
                   <p className={`card-justify ${Styles.qcont}`}>
-                    Establish a technologically advanced and globally connected
-                    makers' society in Sri Lanka.
+                    build almost anything that could improve the quality of
+                    life. Provide a platform of highest standard to exchange
+                    knowledge, ideas and expertise on existing and emerging
+                    Technologies.
                   </p>
                 </div>
               </div>
