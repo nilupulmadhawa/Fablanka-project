@@ -323,7 +323,7 @@ const navbar = () => {
               </a>
             </Link>
           </li>
-          <li className="nav-item dropdown px-2">
+          {/* <li className="nav-item dropdown px-2">
             <Link href="/#">
               <a
                 className={
@@ -338,7 +338,7 @@ const navbar = () => {
             <a className="dropdown-item" href="#">
               Something else here
             </a>
-          </li>
+          </li> */}
         </ul>
       </li>
       <li className="nav-item px-3">
@@ -368,11 +368,12 @@ const navbar = () => {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-dark bg-dark sticky-sm-top ${Styles.navbar}`}
+      className={`navbar navbar-expand-lg navbar-dark bg-[#06283D] sticky-sm-top ${Styles.navbar}`}
     >
       <div className="container-fluid">
+      <img src='https://fablanka-website.s3.ap-southeast-1.amazonaws.com/images/24x24.png' width={32} height={32} className=""/>
         <Link href="#">
-          <a className="navbar-brand">FABLAB</a>
+          <a className="navbar-brand pl-4">FabLanka</a>
         </Link>
         <button
           className="navbar-toggler"

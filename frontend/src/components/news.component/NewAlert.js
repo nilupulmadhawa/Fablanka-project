@@ -100,7 +100,7 @@ const NewAlert = () => {
       <div className={`container-fluid ${style.container}`}>
         <HomeWrapper>
           {/* <h2 className="text-center">News</h2> */}
-          <Slider {...settings} className="m-1 mt-2 py-2">
+          <Slider {...settings} className="m-10 mt-2 py-2">
             {news.map((curElem) => {
               return (
                 <div
@@ -112,7 +112,7 @@ const NewAlert = () => {
                     <div className="col-3 m-0 pr-2">
                       <img
                         src={curElem.image}
-                        className="card-img image-fluid"
+                        className="card-img image-fluid mt-2"
                         alt="..."
                       />
                     </div>
@@ -120,10 +120,10 @@ const NewAlert = () => {
                     <div className="col-9 p-0 m-0 ">
                       <a href={"/news/" + curElem.id} className="no-underline">
                         <div className="card-body py-0 pl-0 ">
-                          <p className="card-title text-sm font-semibold text-black hover:text-red-500">
+                          <p className="card-title text-sm font-semibold text-black hover:text-[#2c185a]">
                             {curElem.title}
                           </p>
-                          <p className="card-text lh-1 text-sm text-slate-500 hover:text-red-500 line-clamp-2 hover:line-clamp-none duration-100 ease-in-out">
+                          <p className="card-text lh-1 text-sm text-slate-500 hover:text-[#2a6d99] line-clamp-2 hover:line-clamp-none duration-100 ease-in-out">
                             {curElem.summery}
                           </p>
                         </div>

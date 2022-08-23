@@ -30,7 +30,7 @@ const ImageSlider = () => {
       <div className="carousel-inner">
         <div className="carousel-item active position-relative">
           <img
-            src="https://eps.leeds.ac.uk/images/800x400_manufacturing_lab_min.jpg"
+            src="https://fablanka-website.s3.ap-southeast-1.amazonaws.com/images/image-slider/IMG_9796-1.jpg"
             className="d-block w-100 img-fluid rounded-3"
             alt="..."
           />
@@ -41,23 +41,23 @@ const ImageSlider = () => {
         </div>
         <div className="carousel-item">
           <img
-            src="https://eps.leeds.ac.uk/images/thermofluids_800_400.jpg"
+            src="https://fablanka-website.s3.ap-southeast-1.amazonaws.com/images/image-slider/IMG_9720-1.jpg"
             className="d-block w-100 img-fluid rounded-3"
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
+            <h5>3D printing and additive manufacturing</h5>
             <p>Some representative placeholder content for the second slide.</p>
           </div>
         </div>
         <div className="carousel-item">
           <img
-            src="https://www.christenseninstitute.org/wp-content/uploads/2018/05/laboratory-800-x-400.jpg"
+            src="https://fablanka-website.s3.ap-southeast-1.amazonaws.com/images/image-slider/IMG_9615-1.jpg"
             className="d-block w-100 img-fluid rounded-3"
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
+            <h5>Arduino and Robotics</h5>
             <p>Some representative placeholder content for the third slide.</p>
           </div>
         </div>
