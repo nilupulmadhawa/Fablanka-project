@@ -353,6 +353,17 @@ const navbar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
+        <Link href="/fabtech">
+          <a
+            className={
+              router.pathname === "/fabtech" ? "nav-link active" : "nav-link"
+            }
+          >
+            FabTech Event
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item px-3">
         <Link href="/login">
           <a
             className={
@@ -371,7 +382,12 @@ const navbar = () => {
       className={`navbar navbar-expand-lg navbar-dark bg-[#06283D] sticky-sm-top ${Styles.navbar}`}
     >
       <div className="container-fluid">
-      <img src='https://fablanka-website.s3.ap-southeast-1.amazonaws.com/images/24x24.png' width={32} height={32} className=""/>
+        <img
+          src="https://fablanka-website.s3.ap-southeast-1.amazonaws.com/images/24x24.png"
+          width={32}
+          height={32}
+          className=""
+        />
         <Link href="#">
           <a className="navbar-brand pl-4">FabLanka</a>
         </Link>
