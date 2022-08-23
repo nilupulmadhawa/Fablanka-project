@@ -40,7 +40,6 @@ const EditNews = (props) => {
     getNews();
   }, []);
 
-
   // update news data to the database
   const onSubmit = (e) => {
     e.preventDefault();
@@ -55,7 +54,7 @@ const EditNews = (props) => {
         image: image,
         status: status,
       };
-      console.log(news);
+      console.log(content);
       axios
         .put(`http://localhost:8000/api/newspage/${id}/`, news)
         .then((res) => {
@@ -175,6 +174,7 @@ const EditNews = (props) => {
                     console.log("Editor is ready to use!", editor);
                   }}
                   onChange={(event, editor) => {
+                    console.log(editor.getData());
                     const data = editor.getData();
                     setContent(data);
                   }}

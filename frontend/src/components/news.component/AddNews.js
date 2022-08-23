@@ -170,13 +170,10 @@ const AddNews = () => {
                   }}
                   onChange={(event, editor) => {
                     const data = editor.getData();
+
+                    console.log(editor);
+                    cons
                     setContent(data);
-                  }}
-                  onBlur={(event, editor) => {
-                    console.log("Blur.", editor);
-                  }}
-                  onFocus={(event, editor) => {
-                    console.log("Focus.", editor);
                   }}
                 />
               </div>
