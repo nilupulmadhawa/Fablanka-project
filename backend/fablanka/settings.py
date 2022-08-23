@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'newspage',
     'pastevent',
     'projectmakandura',
+    'makandurateam',
 ]
 
 MIDDLEWARE = [
