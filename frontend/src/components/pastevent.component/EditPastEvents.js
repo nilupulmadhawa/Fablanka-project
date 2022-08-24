@@ -3,96 +3,56 @@ import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import { API_URL } from "../../config/index";
 import { EditorState } from "draft-js";
-import { convertFromRaw, convertToRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
+import { convertFromRaw, convertToRaw } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-// import Editor from '@draft-js-plugins/editor';
 
-//////////image file add/////////
-// function uploadImageCallBack(file) {
-//   return new Promise((resolve, reject) => {
-//     const xhr = new XMLHttpRequest();
-//     xhr.open("POST", "#");
-//     xhr.setRequestHeader("Authorization", "Client-ID ##clientid###");
-//     const data = new FormData();
-//     data.append("image", file);
-//     xhr.send(data);
-//     xhr.addEventListener("load", () => {
-//       const response = JSON.parse(xhr.responseText);
-//       console.log(response);
-//       resolve(response);
-//     });
-//     xhr.addEventListener("error", () => {
-//       const error = JSON.parse(xhr.responseText);
-//       console.log(error);
-//       reject(error);
-//     });
-//   });
-// }
-///////////////////////////////////
+const EditNews = (props) => {
+  console.log(props.content);
 
-const AddPastEvents = () => {
+  //validation state
   const [validated, setValidated] = useState(false);
+  //set all data to the state
+  const [title_pastevent, setTitle] = useState(props?.title);
+  const [summery_pastevent, setSummery] = useState(props?.summery);
+  const [editorState, setEditorState] = useState(() => {
+    const contentState = convertFromRaw(JSON.parse(props.content));
+    return EditorState.createWithContent(contentState);
+  });
+  const [image_project_m, setImage] = useState(props?.image);
+  const [status, setStatus] = useState(props?.status);
 
-  const [title_pastevent, setTitle] = useState("");
-  const [summery_pastevent, setSummery] = useState("");
-  const [editorState, setEditorState] = React.useState(() =>
-    EditorState.createEmpty()
-  );
-  const [image_project_m, setImage] = useState("");
-  const [status, setStatus] = useState(true);
-
-  function addEvents(e) {
+  // update news data to the database
+  const onSubmit = (e) => {
     // the raw state, stringified
     const content_pastevent = JSON.stringify(
       convertToRaw(editorState.getCurrentContent())
     );
-    // convert the raw state back to a useable ContentState object
-    // const content = convertFromRaw(JSON.parse(rawDraftContentState));
-    console.log(content_pastevent);
+    e.preventDefault();
     const form = e.currentTarget;
-
     if (form.checkValidity() === false) {
-      e.preventDefault();
-
-      setValidated(true);
       e.stopPropagation();
     } else {
-      e.preventDefault();
-
-      const newEvents = {
-        title_pastevent,
-        summery_pastevent,
-        content_pastevent,
-        image_project_m,
-        status,
+      const pastevents = {
+        title_pastevent: title_pastevent,
+        summery_pastevent: summery_pastevent,
+        content_pastevent: content_pastevent,
+        image_project_m: image_project_m,
+        status: status,
       };
-
+      // console.log(content);
       axios
-        .post(`${API_URL}/api/pastevent/`, newEvents)
-        .then(() => {
-          alert("New Event Added");
-          setTitle("");
-          setSummery("");
-          setEditorState("");
-          setImage("");
-          setStatus(true);
-          setValidated(false);
+        .put(`http://localhost:8000/api/pastevent/${props.id}/`, pastevents)
+        .then((res) => {
+          console.log(res);
+          window.location.href = "/admin/pastevents/all";
         })
         .catch((err) => {
-          alert(err);
+          console.log(err);
         });
     }
-  }
-
-  // const router = useRouter();
-
-  // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  // const user = useSelector((state) => state.auth.user);
-  // const loading = useSelector((state) => state.auth.loading);
-
-  // if (typeof window !== "undefined" && !loading && !isAuthenticated)
-  //   router.push("/login");
+    setValidated(true);
+  };
 
   return (
     <>
@@ -100,13 +60,12 @@ const AddPastEvents = () => {
         <div className="container1">
           <div className="col-md-8 mt-4 mx-auto">
             <h2 className="h3 mb-3 font-weight-normal text-center">
-              Add Event
+              Edit Event
             </h2>
-            <Form noValidate validated={validated} onSubmit={addEvents}>
+            <Form noValidate validated={validated} onSubmit={onSubmit}>
               <div className="form-group" style={{ marginBottom: "15px" }}>
                 <label className="form-label" style={{ marginBottom: "5px" }}>
-                  {" "}
-                  Event Title{" "}
+                  Event Title
                 </label>
                 <input
                   type="text"
@@ -114,7 +73,7 @@ const AddPastEvents = () => {
                   minLength="2"
                   value={title_pastevent}
                   className="form-control"
-                  placeholder="Enter Event Title"
+                  placeholder="Enter News Title"
                   id="newsTitle"
                   onChange={(e) => {
                     setTitle(e.target.value);
@@ -133,7 +92,7 @@ const AddPastEvents = () => {
                   type="text"
                   required
                   className="form-control"
-                  placeholder="Summarize your Event"
+                  placeholder="Summarize your news"
                   id="summery"
                   value={summery_pastevent}
                   onChange={(e) => {
@@ -191,36 +150,31 @@ const AddPastEvents = () => {
               <div className="form-group" style={{ marginBottom: "15px" }}>
                 <label className="form-label" style={{ marginBottom: "5px" }}>
                   {" "}
-                  Add Event Content{" "}
+                  Add News Content{" "}
                 </label>
-              </div>
-              <div className="editor">
-                <Editor
-                  editorState={editorState}
-                  onEditorStateChange={setEditorState}
-                  toolbar={{
-                    inline: { inDropdown: true },
-                    list: { inDropdown: true },
-                    textAlign: { inDropdown: true },
-                    link: { inDropdown: true },
-                    history: { inDropdown: true },
-                    //   image: {
-                    //     uploadCallback: uploadImageCallBack,
-                    //     alt: { present: true, mandatory: true },
-                    //   },
-                  }}
-                />
-                {/* show convert draft to html markup */}
+                <div className="editor">
+                  <Editor
+                    editorState={editorState}
+                    onEditorStateChange={setEditorState}
+                    toolbar={{
+                      inline: { inDropdown: true },
+                      list: { inDropdown: true },
+                      textAlign: { inDropdown: true },
+                      link: { inDropdown: true },
+                      history: { inDropdown: true },
+                    }}
+                  />
+                </div>
               </div>
 
-              <button
+              <Button
                 type="submit"
-                className="btn btn-blue btn-block"
+                className="btn btn-success float-right"
                 style={{ marginTop: "15px", marginBottom: "15px" }}
               >
                 <i className="far fa-check-square"></i>
                 &nbsp; Save
-              </button>
+              </Button>
             </Form>
           </div>
         </div>
@@ -228,5 +182,4 @@ const AddPastEvents = () => {
     </>
   );
 };
-
-export default AddPastEvents;
+export default EditNews;

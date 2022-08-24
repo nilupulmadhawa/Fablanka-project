@@ -17,8 +17,11 @@ const AddEvent = () => {
   const loading = useSelector((state) => state.auth.loading);
   console.log(loading);
 
-  if (typeof window !== "undefined" && !loading && !isAuthenticated)
+  if (typeof window !== "undefined" && !loading && !isAuthenticated) {
+    console.log(loading, window, isAuthenticated);
     router.push("/login");
+  }
+  
   return (
     <>
       <Layout title="FabLanka | News" content="Dashboard page">

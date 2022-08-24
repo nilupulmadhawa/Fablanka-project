@@ -6,7 +6,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import styles from "../styles/index.module.css";
 
-const PostEvent = dynamic(
+const PastEvent = dynamic(
   () => import("../components/pastevent.component/PastEvent"),
   {
     ssr: false,
@@ -113,7 +113,7 @@ const homePage = () => {
         </div>
         <div className="row">
           <div className="col-lg-12">
-            <PostEvent />
+            <PastEvent />
           </div>
         </div>
       </div>

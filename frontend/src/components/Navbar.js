@@ -100,22 +100,24 @@ const navbar = () => {
                 </a>
               </Link>
             </li>
-            <li className="nav-item dropdown px-3 ">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+            <li className="nav-item dropdown px-3">
+              <button className="peer bg-transparent hover:bg-green-700 border-none text-slate-400 outline-none">
+                FabLab
+              </button>
+              <div
+                className="hidden peer-hover:flex hover:flex
+         w-[200px] ml-5
+         flex-col bg-transparent drop-shadow-lg "
               >
-                FabLabs
-              </a>
+                <a className="no-underline" href="/fablabs/makadura">
+                  makadura
+                </a>
+              </div>
               <ul
                 className="dropdown-menu dropdown-menu-dark"
-                aria-labelledby="navbarDropdownMenuLink"
+                aria-labelledby="navbarDropdownMenuLink1"
               >
-                <li className="nav-item dropdown px-2">
+                <li className="dropdown-item px-2">
                   <Link href="/fablabs/makadura">
                     <a
                       className={
@@ -127,24 +129,6 @@ const navbar = () => {
                       FabLab Makadura
                     </a>
                   </Link>
-                </li>
-                <li className="nav-item dropdown px-2">
-                  <Link href="/#">
-                    <a
-                      className={
-                        router.pathname === "/#"
-                          ? "nav-link active"
-                          : "nav-link"
-                      }
-                    >
-                      Free education
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
                 </li>
               </ul>
             </li>
@@ -210,6 +194,62 @@ const navbar = () => {
         </ul>
       </li>
 
+      {/* PastEvent admin pannel links */}
+      <li className="nav-item dropdown px-3 ">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Past Event Details
+        </a>
+        <ul
+          className="dropdown-menu dropdown-menu-dark"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li className="nav-item px-3">
+            <Link href="/admin/pastevents/add">
+              <a
+                className={
+                  router.pathname === "/admin/pastevents/add"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Add Event
+              </a>
+            </Link>
+          </li>
+          <li className="nav-item px-3">
+            <Link href="/admin/pastevents/all">
+              <a
+                className={
+                  router.pathname === "/admin/pastevents/all"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Past Events
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </li>
+      <li className="nav-item px-3">
+        <Link href="/fabtech">
+          <a
+            className={
+              router.pathname === "/fabtech" ? "nav-link active" : "nav-link"
+            }
+          >
+            FabTech Event
+          </a>
+        </Link>
+      </li>
+
       {/* logout and register links */}
       <li className="nav-item dropdown px-3 ">
         <a
@@ -257,6 +297,17 @@ const navbar = () => {
             className={router.pathname === "/" ? "nav-link active" : "nav-link"}
           >
             Home
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item px-3">
+        <Link href="/about">
+          <a
+            className={
+              router.pathname === "/about" ? "nav-link active" : "nav-link"
+            }
+          >
+            About Us
           </a>
         </Link>
       </li>
@@ -341,36 +392,16 @@ const navbar = () => {
           </li> */}
         </ul>
       </li>
-      <li className="nav-item px-3">
-        <Link href="/about">
-          <a
-            className={
-              router.pathname === "/about" ? "nav-link active" : "nav-link"
-            }
-          >
-            About Us
-          </a>
-        </Link>
-      </li>
-      <li className="nav-item px-3">
+      <li className="nav-item px-3 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 rounded-md ...">
         <Link href="/fabtech">
           <a
             className={
-              router.pathname === "/fabtech" ? "nav-link active" : "nav-link"
+              router.pathname === "/fabtech"
+                ? "nav-link active"
+                : "nav-link text-neutral-50 hover:text-sky-400"
             }
           >
             FabTech Event
-          </a>
-        </Link>
-      </li>
-      <li className="nav-item px-3">
-        <Link href="/login">
-          <a
-            className={
-              router.pathname === "/login" ? "nav-link active" : "nav-link"
-            }
-          >
-            Login
           </a>
         </Link>
       </li>
@@ -379,7 +410,7 @@ const navbar = () => {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-dark bg-[#06283D] sticky-sm-top ${Styles.navbar}`}
+      className={`py-3 navbar navbar-expand-lg navbar-dark bg-[#06283D] sticky-sm-top ${Styles.navbar}`}
     >
       <div className="container-fluid">
         <img

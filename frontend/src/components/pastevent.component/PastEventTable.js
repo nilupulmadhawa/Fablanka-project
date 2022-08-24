@@ -6,30 +6,25 @@ import { useEffect, useState } from "react";
 import { data } from "../data";
 import { API_URL } from "../../config/index";
 
-const NewsTable = () => {
-  const [news, setNews] = useState([]);
+const EventsTable = () => {
+  const [events, setEvents] = useState([]);
   // const [status, setStatus] = useState("");
 
   //check setStatus using console.log(status)
 
-  // useEffect(() => {
-  //   console.log(setStatus);
-  //   getNews();
-  // }, []);
-
   // const [status, setStatus] = useState(isChacked);
 
-  const getNews = async () => {
+  const getEvents = async () => {
     try {
-      const response = await axios.get(`${API_URL}/api/newspage/`);
-      setNews(response.data);
+      const response = await axios.get(`${API_URL}/api/pastevent/`);
+      setEvents(response.data);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    getNews();
+    getEvents();
   }, []);
 
   // using isCheck function and update the status in database
@@ -38,7 +33,7 @@ const NewsTable = () => {
     //if status is true then set status to false
     //if status is false then set status to true
     axios
-      .patch(`http://localhost:8000/api/newspage/${id}/`, { status: status })
+      .patch(`http://localhost:8000/api/pastevent/${id}/`, { status: status })
       .then((res) => {
         console.log(res);
         //alert for change status successfully
@@ -56,8 +51,8 @@ const NewsTable = () => {
       )
     ) {
       try {
-        await axios.delete(`http://localhost:8000/api/newspage/${id}`);
-        getNews();
+        await axios.delete(`http://localhost:8000/api/pastevent/${id}`);
+        getEvents();
       } catch (error) {
         console.log(error);
       }
@@ -67,29 +62,33 @@ const NewsTable = () => {
   return (
     <div className="container mb-10">
       <div class="table-responsive">
-        <h1 className="text-center">News</h1>
+        <h1 className="text-center">Events</h1>
         <table className="table table-bordered">
           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">Image</th>
-              <th scope="col">News Title</th>
+              <th scope="col">Event Title</th>
               <th scope="col">Summery</th>
               <th scope="col">Status</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
-          {news.map((curElem) => {
-            console.log(curElem.status);
+          {events.map((curElem) => {
+            console.log(curElem.title_pastevent);
             return (
               <tbody>
                 <tr>
                   <th scope="row">{curElem.id}</th>
                   <td className="text-center">
-                    <img src={curElem.image} width={100} height={100} />
+                    <img
+                      src={curElem.image_project_m}
+                      width={100}
+                      height={100}
+                    />
                   </td>
-                  <td>{curElem.title}</td>
-                  <td>{curElem.summery}</td>
+                  <td>{curElem.title_pastevent}</td>
+                  <td>{curElem.summery_pastevent}</td>
                   <td>
                     <select
                       onChange={(e) => onChange(curElem.id, e.target.value)}
@@ -101,7 +100,7 @@ const NewsTable = () => {
                   </td>
                   <td className="text-center">
                     <div class="btn-group-vertical">
-                      <Link href={"/admin/news/" + curElem.id}>
+                      <Link href={"/admin/pastevents/" + curElem.id}>
                         <button className="btn btn-warning">Edit</button>
                       </Link>
                       <button
@@ -124,4 +123,4 @@ const NewsTable = () => {
   );
 };
 
-export default NewsTable;
+export default EventsTable;
