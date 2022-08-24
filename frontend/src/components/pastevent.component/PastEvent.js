@@ -87,7 +87,7 @@ const PastEvent = () => {
                         <h1 className="sm:text-lg md:text-xl lg:text-2xl font-semibold mb-3">
                           {curElem.title_pastevent}
                         </h1>
-                        <p className="leading-relaxed mb-3">
+                        <p className="leading-relaxed mb-3 line-clamp-3 hover:line-clamp-none duration-100 ease-in-out">
                           {curElem.summery_pastevent}
                         </p>
                         <div className="flex items-center flex-wrap ">
