@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import { HomeWrapper } from "../style";
 import styles from "../pastevent.component/PastEvent.module.css";
 import { API_URL } from "../../config/index";
+import { datamaknaduraproject } from "../data_makanduraproject";
 
 const PostEvent = () => {
   var settings = {

@@ -53,7 +53,7 @@
 
 .card_item {
   padding: 15px 30px;
-  width: 24%;
+  width: 22%;
   text-align: center;
 }
 
@@ -84,10 +84,10 @@
 }
 
 .container .card_item .userName {
-  color: #203150;
+  color: #222222;
   margin-top: 10px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;

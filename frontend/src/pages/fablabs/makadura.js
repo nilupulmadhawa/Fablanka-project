@@ -1,6 +1,6 @@
 import Layout from "../../hocs/Layout";
 import MakanduraTeam from '../../components/makandura.component/makandurateam';
-import MakanduraCard from "../../components/makandura.component/makanduracard";
+import MakanduraCard from "../../components/makandura.component/OurProject";
 
 
 const LabMakadura = () => {
