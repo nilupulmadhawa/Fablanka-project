@@ -24,6 +24,10 @@ const EditNews = (props) => {
 
   // update news data to the database
   const onSubmit = (e) => {
+    // the raw state, stringified
+    const content = JSON.stringify(
+      convertToRaw(editorState.getCurrentContent())
+    );
     e.preventDefault();
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
@@ -32,7 +36,7 @@ const EditNews = (props) => {
       const news = {
         title: title,
         summery: summery,
-        content: editorState,
+        content: content,
         image: image,
         status: status,
       };
