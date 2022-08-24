@@ -1,44 +1,26 @@
-// news edit component
-
 import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-// import {Editor as ClassicEditor} from 'ckeditor5-custom-build/build/ckeditor';
-import Editor from "ckeditor5-custom-build/build/ckeditor";
 import axios from "axios";
 import { API_URL } from "../../config/index";
+import { EditorState } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+import { convertFromRaw, convertToRaw } from "draft-js";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const EditNews = (props) => {
-  const id = props.id.newsID;
-
-  //get the id from the url
+  console.log(props.content);
 
   //validation state
   const [validated, setValidated] = useState(false);
   //set all data to the state
-  const [title, setTitle] = useState("");
-  const [summery, setSummery] = useState("");
-  const [content, setContent] = useState("");
-  const [image, setImage] = useState("");
-  const [status, setStatus] = useState(true);
-
-  //get the news from the database and set the data to the state using use effect
-
-  useEffect(() => {
-    const getNews = async () => {
-      try {
-        const response = await axios.get(`${API_URL}/api/newspage/${id}`);
-        setTitle(response.data.title);
-        setSummery(response.data.summery);
-        setContent(response.data.content);
-        setImage(response.data.image);
-        setStatus(response.data.status);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getNews();
-  }, []);
+  const [title, setTitle] = useState(props?.title);
+  const [summery, setSummery] = useState(props?.summery);
+  const [editorState, setEditorState] = useState(() => {
+    const contentState = convertFromRaw(JSON.parse(props.content));
+    return EditorState.createWithContent(contentState);
+  });
+  const [image, setImage] = useState(props?.image);
+  const [status, setStatus] = useState(props?.status);
 
   // update news data to the database
   const onSubmit = (e) => {
@@ -50,13 +32,13 @@ const EditNews = (props) => {
       const news = {
         title: title,
         summery: summery,
-        content: content,
+        content: editorState,
         image: image,
         status: status,
       };
-      console.log(content);
+      // console.log(content);
       axios
-        .put(`http://localhost:8000/api/newspage/${id}/`, news)
+        .put(`http://localhost:8000/api/newspage/${props.id}/`, news)
         .then((res) => {
           console.log(res);
           window.location.href = "/admin/news/all";
@@ -166,25 +148,19 @@ const EditNews = (props) => {
                   {" "}
                   Add News Content{" "}
                 </label>
-                <CKEditor
-                  editor={Editor}
-                  data={content}
-                  onReady={(editor) => {
-                    // You can store the "editor" and use when it is needed.
-                    console.log("Editor is ready to use!", editor);
-                  }}
-                  onChange={(event, editor) => {
-                    console.log(editor.getData());
-                    const data = editor.getData();
-                    setContent(data);
-                  }}
-                  onBlur={(event, editor) => {
-                    console.log("Blur.", editor);
-                  }}
-                  onFocus={(event, editor) => {
-                    console.log("Focus.", editor);
-                  }}
-                />
+                <div className="editor">
+                  <Editor
+                    editorState={editorState}
+                    onEditorStateChange={setEditorState}
+                    toolbar={{
+                      inline: { inDropdown: true },
+                      list: { inDropdown: true },
+                      textAlign: { inDropdown: true },
+                      link: { inDropdown: true },
+                      history: { inDropdown: true },
+                    }}
+                  />
+                </div>
               </div>
 
               <Button

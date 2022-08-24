@@ -6,10 +6,32 @@ import { EditorState } from "draft-js";
 import { convertFromRaw, convertToRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-// import { API_URL } from "../../../config";
-// import ImageInsert from "@ckeditor/ckeditor5-image/src/imageinsert";
+// import Editor from '@draft-js-plugins/editor';
 
-const AddNews = () => {
+//////////image file add/////////
+// function uploadImageCallBack(file) {
+//   return new Promise((resolve, reject) => {
+//     const xhr = new XMLHttpRequest();
+//     xhr.open("POST", "#");
+//     xhr.setRequestHeader("Authorization", "Client-ID ##clientid###");
+//     const data = new FormData();
+//     data.append("image", file);
+//     xhr.send(data);
+//     xhr.addEventListener("load", () => {
+//       const response = JSON.parse(xhr.responseText);
+//       console.log(response);
+//       resolve(response);
+//     });
+//     xhr.addEventListener("error", () => {
+//       const error = JSON.parse(xhr.responseText);
+//       console.log(error);
+//       reject(error);
+//     });
+//   });
+// }
+///////////////////////////////////
+
+const AddPastEvents = () => {
   const [validated, setValidated] = useState(false);
 
   const [title, setTitle] = useState("");
@@ -205,4 +227,4 @@ const AddNews = () => {
   );
 };
 
-export default AddNews;
+export default AddPastEvents;

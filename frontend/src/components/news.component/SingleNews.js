@@ -1,15 +1,34 @@
 import React from "react";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-// import {Editor as ClassicEditor} from 'ckeditor5-custom-build/build/ckeditor';
-import Editor from "ckeditor5-custom-build/build/ckeditor";
-import ReactHtmlParser, {
-  processNodes,
-  convertNodeToElement,
-  htmlparser2,
-} from "react-html-parser";
+import { convertToRaw, convertFromRaw } from "draft-js";
+import draftToHtml from "draftjs-to-html";
+import { useEffect } from "react";
+import { EditorState } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const SingleNews = (props) => {
-  console.log(props);
+  console.log(props.content);
+
+  // const [editorState, setEditorState] = React.useState([]);
+
+  // const [contentState, setContentState] = React.useState([]);
+  const contentState = convertFromRaw(JSON.parse(props.content));
+  const editorState = EditorState.createWithContent(contentState);
+
+  const test = () => {
+    // const rawContentState = (
+    //   convertToRaw(editorState.getCurrentContent())
+    // );
+    // const markup = draftToHtml(props?.content);
+    // console.log(markup);
+    // setContentState(markup);
+  };
+
+  useEffect(() => {
+    // setEditorState(props?.content);
+    // test();
+  });
+
   return (
     <div className="container mb-5">
       <h1 className="text-center text-3xl">{props.title}</h1>
@@ -17,11 +36,12 @@ const SingleNews = (props) => {
       {/* <Image width={100} height={100} src={props.image} /> */}
       <div className="row">
         <div className="col-md-12">
-          <CKEditor
-            editor={Editor}
-            //edit mode disabled
-            disabled={true}
-            data={props.content}
+          <Editor
+            editorState={editorState}
+            readOnly={true}
+            toolbar={{
+              options: [],
+            }}
           />
         </div>
       </div>

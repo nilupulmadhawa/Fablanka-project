@@ -8,7 +8,7 @@ import { HomeWrapper } from "../style";
 import styles from "./PastEvent.module.css";
 import { API_URL } from "../../config/index";
 
-const PostEvent = () => {
+const PastEvent = () => {
   var settings = {
     dots: false,
     infinite: false,
@@ -87,4 +87,4 @@ const PostEvent = () => {
   );
 };
 
-export default PostEvent;
+export default PastEvent;
