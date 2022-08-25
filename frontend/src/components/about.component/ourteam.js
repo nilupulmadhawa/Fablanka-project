@@ -10,10 +10,12 @@ const OurTeam = () => {
         {dataourteam.map((curElem) => {
           return (
             <div className={Styles.card_item} key={curElem.id}>
-              <a href="#">
+              <a className="no-underline" href="#">
                 <div className={Styles.card_inner}>
                   <img src={curElem.image} />
-                  <div className={Styles.userName}>{curElem.name}</div>
+                  <div className={Styles.userName}>
+                    <p className="">{curElem.name}</p>
+                  </div>
                 </div>
               </a>
             </div>
