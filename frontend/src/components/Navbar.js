@@ -62,7 +62,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item px-3">
-              <Link href="/industrytec">
+              <Link href="/#">
                 <a
                   className={
                     router.pathname === "/industrytec"
@@ -88,7 +88,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item px-3">
-              <Link href="/project">
+              <Link href="/#">
                 <a
                   className={
                     router.pathname === "/project"
@@ -312,7 +312,7 @@ const NavBar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/industrytec">
+        <Link href="/#">
           <a
             className={
               router.pathname === "/industrytec"
@@ -336,7 +336,7 @@ const NavBar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/project">
+        <Link href="/#">
           <a
             className={
               router.pathname === "/project" ? "nav-link active" : "nav-link"
