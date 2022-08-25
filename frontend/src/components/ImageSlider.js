@@ -35,8 +35,8 @@ const ImageSlider = () => {
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5>Drones</h5>
+            {/* <p>Some representative placeholder content for the first slide.</p> */}
           </div>
         </div>
         <div className="carousel-item">
@@ -47,7 +47,7 @@ const ImageSlider = () => {
           />
           <div className="carousel-caption d-none d-md-block">
             <h5>3D printing and additive manufacturing</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+            {/* <p>Some representative placeholder content for the second slide.</p> */}
           </div>
         </div>
         <div className="carousel-item">
@@ -58,7 +58,7 @@ const ImageSlider = () => {
           />
           <div className="carousel-caption d-none d-md-block">
             <h5>Arduino and Robotics</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            {/* <p>Some representative placeholder content for the third slide.</p> */}
           </div>
         </div>
       </div>
