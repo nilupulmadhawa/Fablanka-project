@@ -10,7 +10,7 @@ const OurTeam = () => {
         {dataourteam.map((curElem) => {
           return (
             <div className={Styles.card_item} key={curElem.id}>
-              <a className="no-underline" href="#">
+              <a className="no-underline" href={curElem.link}>
                 <div className={Styles.card_inner}>
                   <img src={curElem.image} />
                   <div className={Styles.userName}>
