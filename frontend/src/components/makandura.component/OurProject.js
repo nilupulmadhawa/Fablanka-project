@@ -8,7 +8,7 @@ import { HomeWrapper } from "../style";
 import styles from "../pastevent.component/PastEvent.module.css";
 import { API_URL } from "../../config/index";
 import { makanduraproject } from "../data_makanduraproject";
-const PostEvent = () => {
+const OurProject = () => {
   var settings = {
     dots: false,
     infinite: false,
@@ -48,7 +48,9 @@ const PostEvent = () => {
   return (
     <>
       <div className="container-fluid px-5 pb-5 pt-3 rounded-3 shadow bg-white mb-5">
-        <h1 className="text-center pb-3 text-3xl text-[#205DA1]">Our Project</h1>
+        <h1 className="text-center pb-3 text-3xl text-[#205DA1]">
+          Our Project
+        </h1>
         <HomeWrapper>
           <Slider {...settings} className={styles.card_container}>
             {makanduraproject.map((item, index) => (
@@ -59,21 +61,21 @@ const PostEvent = () => {
                     src={item.image}
                     alt="blog"
                   />
-                  <Link href="/blog/[id]" as={`/blog/${item.id}`}>
-                    <div className="p-6 hover:bg-[#243f5e] hover:text-white transition duration-300 ease-in">
-                      <h1 className="sm:text-lg md:text-xl lg:text-2xl font-semibold mb-3">
-                        {item.title}
-                      </h1>
-                      <p className="leading-relaxed mb-3">
-                        {item.summery}
-                      </p>
-                      <div className="flex items-center flex-wrap ">
-                        {/* <h2 className="text-base text-right font-medium text-indigo-300 md:mb-2 lg:mb-0">
+                  {/* <Link href="/#/[id]" as={`/#/${item.id}`}> */}
+                  <div className="p-6 hover:bg-[#243f5e] hover:text-white transition duration-300 ease-in">
+                    <h1 className="sm:text-lg md:text-xl lg:text-2xl font-semibold mb-3">
+                      {item.title}
+                    </h1>
+                    <p className="leading-relaxed mb-3 line-clamp-4 hover:line-clamp-none duration-100 ease-in-out">
+                      {item.summery}
+                    </p>
+                    <div className="flex items-center flex-wrap ">
+                      {/* <h2 className="text-base text-right font-medium text-indigo-300 md:mb-2 lg:mb-0">
                           October 29, 2021
                         </h2> */}
-                      </div>
                     </div>
-                  </Link>
+                  </div>
+                  {/* </Link> */}
                 </div>
               </div>
             ))}
@@ -84,4 +86,4 @@ const PostEvent = () => {
   );
 };
 
-export default PostEvent;
+export default OurProject;
