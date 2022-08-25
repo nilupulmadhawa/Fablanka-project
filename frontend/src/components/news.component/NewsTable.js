@@ -66,7 +66,7 @@ const NewsTable = () => {
 
   return (
     <div className="container mb-10">
-      <div class="table-responsive">
+      <div className="table-responsive">
         <h1 className="text-center">News</h1>
         <table className="table table-bordered">
           <thead>
@@ -79,11 +79,12 @@ const NewsTable = () => {
               <th scope="col">Action</th>
             </tr>
           </thead>
-          {news.map((curElem) => {
-            console.log(curElem.status);
-            return (
-              <tbody>
-                <tr>
+          <tbody>
+            {news.map((curElem) => {
+              console.log(curElem.status);
+
+              return (
+                <tr key={curElem.id}>
                   <th scope="row">{curElem.id}</th>
                   <td className="text-center">
                     <img src={curElem.image} width={100} height={100} />
@@ -100,7 +101,7 @@ const NewsTable = () => {
                     </select>
                   </td>
                   <td className="text-center">
-                    <div class="btn-group-vertical">
+                    <div className="btn-group-vertical">
                       <Link href={"/admin/news/" + curElem.id}>
                         <button className="btn btn-warning">Edit</button>
                       </Link>
@@ -115,9 +116,9 @@ const NewsTable = () => {
                     </div>
                   </td>
                 </tr>
-              </tbody>
-            );
-          })}
+              );
+            })}
+          </tbody>
         </table>
       </div>
     </div>

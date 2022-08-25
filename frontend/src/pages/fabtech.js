@@ -14,7 +14,7 @@ const fabtech = () => {
           <h2 className="text-[#5f5f5f]">at FabLab Makandura location in</h2>
           <h1 className="text-[30px] text-[#ccb032] font-medium mb-2">Makandura Public Library complex</h1>
           <img src="https://img.icons8.com/fluency/48/000000/more.png" className=""></img>
-          <div class="h-1 w-full bg-gradient-to-r from-[#977402fb] to-fuchsia-500 mb-5 mt-10"></div>
+          <div className="h-1 w-full bg-gradient-to-r from-[#977402fb] to-fuchsia-500 mb-5 mt-10"></div>
 
       <div>
         {/* card */}
@@ -75,7 +75,7 @@ const fabtech = () => {
             <li className="mb-2 ">Opening of a new electronic component p at FabLab Makandura</li>
       </div>
       </div>
-      <div class="h-1 w-full bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
+      <div className="h-1 w-full bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
       </>
     </Layout>
   );

@@ -54,7 +54,8 @@ const OurProject = () => {
         <HomeWrapper>
           <Slider {...settings} className={styles.card_container}>
             {makanduraproject.map((item, index) => (
-              <div className="p-7 sm:w-1/2 lg:w-1/3">
+              <div className="p-7 sm:w-1/2 lg:w-1/3"
+              key={item.id}>
                 <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                   <img
                     className="lg:auto md:h-48 w-full object-cover object-center hover:scale-125 duration-300 ease-in-out"

@@ -20,7 +20,7 @@ const NewAlert = dynamic(
   }
 );
 
-const homePage = () => {
+const HomePage = () => {
   const [readMore, setReadMore] = useState(false);
 
   useEffect(() => {
@@ -121,4 +121,4 @@ const homePage = () => {
   );
 };
 
-export default homePage;
+export default HomePage;

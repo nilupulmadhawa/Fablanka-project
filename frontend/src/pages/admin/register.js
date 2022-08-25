@@ -41,7 +41,7 @@ const RegisterPage = () => {
 
   return (
     <Layout
-      title="httpOnly Auth | Register"
+      title="FabLab | Register"
       content="Resiger page for this auth tutorial on httpOnly cookies"
     >
       <h1 className="display-4 mt-5">Register Page</h1>

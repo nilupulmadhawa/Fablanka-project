@@ -5,7 +5,7 @@ import { logout } from "../actions/auth";
 import { MDBIcon } from "mdb-react-ui-kit";
 import Styles from "../styles/Navbar.module.css";
 
-const navbar = () => {
+const NavBar = () => {
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -445,4 +445,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default NavBar;

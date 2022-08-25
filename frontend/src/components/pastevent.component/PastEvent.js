@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import Link from "next/link";
+import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { HomeWrapper } from "../style";

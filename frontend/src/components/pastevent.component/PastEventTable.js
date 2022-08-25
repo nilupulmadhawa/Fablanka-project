@@ -61,7 +61,7 @@ const EventsTable = () => {
 
   return (
     <div className="container mb-10">
-      <div class="table-responsive">
+      <div className="table-responsive">
         <h1 className="text-center">Events</h1>
         <table className="table table-bordered">
           <thead>
@@ -74,11 +74,11 @@ const EventsTable = () => {
               <th scope="col">Action</th>
             </tr>
           </thead>
-          {events.map((curElem) => {
-            console.log(curElem.title_pastevent);
-            return (
-              <tbody>
-                <tr>
+          <tbody>
+            {events.map((curElem) => {
+              console.log(curElem.title_pastevent);
+              return (
+                <tr key={curElem.id}>
                   <th scope="row">{curElem.id}</th>
                   <td className="text-center">
                     <img
@@ -99,7 +99,7 @@ const EventsTable = () => {
                     </select>
                   </td>
                   <td className="text-center">
-                    <div class="btn-group-vertical">
+                    <div className="btn-group-vertical">
                       <Link href={"/admin/pastevents/" + curElem.id}>
                         <button className="btn btn-warning">Edit</button>
                       </Link>
@@ -114,9 +114,9 @@ const EventsTable = () => {
                     </div>
                   </td>
                 </tr>
-              </tbody>
-            );
-          })}
+              );
+            })}
+          </tbody>
         </table>
       </div>
     </div>

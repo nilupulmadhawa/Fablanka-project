@@ -3,4 +3,5 @@ module.exports = {
   images: {
     domains: ["assets.example.com"],
   },
+  distDir: "build",
 };
