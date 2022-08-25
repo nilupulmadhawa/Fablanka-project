@@ -43,7 +43,7 @@ const NewAlert = () => {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 2,
-          infinite: true,
+          infinite: false,
           speed: 1000,
           autoplaySpeed: 3000,
           vertical: true,
@@ -56,7 +56,7 @@ const NewAlert = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
-          infinite: true,
+          infinite: false,
           speed: 1000,
           autoplaySpeed: 3000,
           vertical: true,
