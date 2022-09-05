@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Styles from "../../styles/ourteam.module.css";
 import { dataourteam } from "../data_ourteam";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const OurTeam = () => {
   return (
@@ -14,7 +16,11 @@ const OurTeam = () => {
                 <div className={Styles.card_inner}>
                   <img src={curElem.image} />
                   <div className={Styles.userName}>
-                    <p className="">{curElem.name}</p>
+                    <p className="text-xl mb-1">{curElem.name}</p>
+                    <p className="text-slate-400">{curElem.position}</p>
+                    <p className="">
+                      <FontAwesomeIcon icon={faLinkedin} size="lg" />
+                    </p>
                   </div>
                 </div>
               </a>

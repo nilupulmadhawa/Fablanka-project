@@ -7,6 +7,9 @@ import Head from "next/head";
 import { Provider } from "react-redux";
 import { useStore } from "../store";
 import "../styles/globals.css";
+import '@fortawesome/fontawesome-svg-core/styles.css'; //importing font awesome css
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
 const App = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState);
