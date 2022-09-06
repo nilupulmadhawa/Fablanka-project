@@ -7,6 +7,7 @@ import { API_URL } from "../../config/index";
 
 const OurProjectTable = () => {
   const [Project, setProject] = useState([]);
+  console.log(Project, "project");
   // const [status, setStatus] = useState("");
 
   //check setStatus using console.log(status)
@@ -22,6 +23,7 @@ const OurProjectTable = () => {
     try {
       const response = await axios.get(`${API_URL}/api/projectmakandura/`);
       setProject(response.data);
+      console.log(response.data, "setProject");
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +39,9 @@ const OurProjectTable = () => {
     //if status is true then set status to false
     //if status is false then set status to true
     axios
-      .patch(`http://localhost:8000/api/projectmakandura/${id}/`, { status: status })
+      .patch(`http://localhost:8000/api/projectmakandura/${id}/`, {
+        status: status,
+      })
       .then((res) => {
         console.log(res);
         //alert for change status successfully
@@ -86,7 +90,11 @@ const OurProjectTable = () => {
                 <tr key={curElem.id}>
                   <th scope="row">{curElem.id}</th>
                   <td className="text-center">
-                    <img src={curElem.image_project_m} width={100} height={100} />
+                    <img
+                      src={curElem.image_project_m}
+                      width={100}
+                      height={100}
+                    />
                   </td>
                   <td>{curElem.title_project_m}</td>
                   <td>{curElem.summery_project_m}</td>

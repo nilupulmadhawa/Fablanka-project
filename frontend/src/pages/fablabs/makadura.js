@@ -8,6 +8,7 @@ const ProjectMakandura = dynamic(
     ssr: false,
   }
 );
+
 const LabMakadura = () => {
   return (
     <Layout title="FabLanka | Makadura" content="Fablab Makadura page">
