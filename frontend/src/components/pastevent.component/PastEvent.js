@@ -71,7 +71,7 @@ const PastEvent = () => {
         <HomeWrapper>
           <Slider {...settings} className={styles.card_container}>
             {events.map((curElem) => {
-              console.log(curElem);
+              console.log("fdgsfgs");
               return (
                 <div className="p-4 sm:w-1/2 lg:w-1/3" key={curElem.id}>
                   <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
