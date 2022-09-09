@@ -31,6 +31,7 @@ const OurProjectTable = () => {
 
   useEffect(() => {
     getProject();
+
   }, []);
 
   // using isCheck function and update the status in database
