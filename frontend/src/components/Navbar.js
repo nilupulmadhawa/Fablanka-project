@@ -62,7 +62,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item px-3">
-              <Link href="/#">
+              <Link href="/industrytec">
                 <a
                   className={
                     router.pathname === "/industrytec"
@@ -101,10 +101,10 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item px-3">
-              <Link href="/contactus">
+              <Link href="/contact">
                 <a
                   className={
-                    router.pathname === "/Contect Us"
+                    router.pathname === "/contect"
                       ? "nav-link active"
                       : "nav-link"
                   }
@@ -374,7 +374,7 @@ const NavBar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/#">
+        <Link href="/industrytec">
           <a
             className={
               router.pathname === "/industrytec"

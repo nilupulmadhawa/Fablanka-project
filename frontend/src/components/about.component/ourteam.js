@@ -7,12 +7,12 @@ import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const OurTeam = () => {
   return (
-    <>
+    <div>
       <div className={Styles.container}>
         {dataourteam.map((curElem) => {
           return (
             <div className={Styles.card_item} key={curElem.id}>
-              <a className="no-underline" href={curElem.link}>
+              <a className="no-underline" href={curElem.link} target="_blank" rel="noreferrer">
                 <div className={Styles.card_inner}>
                   <img src={curElem.image} />
                   <div className={Styles.userName}>
@@ -28,7 +28,7 @@ const OurTeam = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 export default OurTeam;

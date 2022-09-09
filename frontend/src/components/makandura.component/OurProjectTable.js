@@ -109,7 +109,7 @@ const OurProjectTable = () => {
                   </td>
                   <td className="text-center">
                     <div className="btn-group-vertical">
-                      <Link href={"/admin/news/" + curElem.id}>
+                      <Link href={"/admin/ourproject/" + curElem.id}>
                         <button className="btn btn-warning">Edit</button>
                       </Link>
                       <button
