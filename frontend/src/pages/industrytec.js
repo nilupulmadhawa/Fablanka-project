@@ -1,11 +1,12 @@
 import React from "react";
 import Layout from "../hocs/Layout";
+import ItemCard from "../components/industry4.0.component/ItemCard";
 
 const industrytec = () => {
   return (
     <Layout>
       <div>
-        <h1>Industry 4.0 Technologies</h1>
+        <ItemCard />
       </div>
     </Layout>
   );

@@ -82,8 +82,8 @@ const ProjectMakandura = () => {
                     alt="blog"
                   />
                   <Link
-                    href="/projectmakandura/[id]"
-                    as={`/projectmakandura/${curElem.id}`}
+                    href="/ourproject/[id]"
+                    as={`/ourproject/${curElem.id}`}
                   >
                     <div className="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
                       <h1 className="sm:text-lg md:text-xl lg:text-2xl font-semibold mb-3">

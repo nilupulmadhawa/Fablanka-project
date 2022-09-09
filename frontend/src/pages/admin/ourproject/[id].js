@@ -7,15 +7,15 @@ import dynamic from "next/dynamic";
 import { API_URL } from "../../../config/index";
 // import EditNews from "../../../components/news.component/EditNews";
 
-const EditNews = dynamic(
-  () => import("../../../components/news.component/EditNews"),
+const EditProjectMakandura = dynamic(
+  () => import("../../../components/makandura.component/EditProjectMakandura"),
   {
     ssr: false,
   }
 );
 
-const editnews = (props) => {
-  // console.log(props.news);
+const editprojectmakandura = (props) => {
+  console.log(props);
   // const router = useRouter();
 
   // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -27,16 +27,15 @@ const editnews = (props) => {
 
   return (
     <div>
-      <Layout title="FabLanka | News" content="Dashboard page">
+      <Layout title="FabLanka | ProjectMakandura" content="Dashboard page">
         <div className="container mb-10">
-          <EditNews
-            // id={props.}
-            // title={props.}
-            // summery={props}
-            // content={props}
-            // image={props}
-            // status={props}
-          />
+          {/* <EditProjectMakandura /> */}
+          <EditProjectMakandura
+            id={props.project.id}
+            title={props.project.title__project_m}
+            summery={props.project.summery_project_m}
+            content={props.project.content_project_m}
+            image={props.project.image_project_m}          />
         </div>
       </Layout>
     </div>
@@ -44,10 +43,11 @@ const editnews = (props) => {
 };
 
 //return newsID from params
-editnews.getInitialProps = async (context) => {
-  const newsID = context.query.id;
-  const response = await axios.get(`${API_URL}/api/newspage/${newsID}`);
-  return { news: response.data };
+editprojectmakandura.getInitialProps = async (context) => {
+  const projectID = context.query.id;
+  const response = await axios.get(`${API_URL}/api/projectmakandura/${projectID}`);
+  console.log(response);
+  return { project: response.data };
 };
 
-export default editnews;
+export default editprojectmakandura;
