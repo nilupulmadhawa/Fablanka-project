@@ -62,7 +62,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item px-3">
-              <Link href="/#">
+              <Link href="/industrytec">
                 <a
                   className={
                     router.pathname === "/industrytec"
@@ -97,6 +97,19 @@ const NavBar = () => {
                   }
                 >
                   Project
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item px-3">
+              <Link href="/contact">
+                <a
+                  className={
+                    router.pathname === "/contect"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Contect Us  
                 </a>
               </Link>
             </li>
@@ -238,6 +251,55 @@ const NavBar = () => {
           </li>
         </ul>
       </li>
+
+
+      {/* OurProject admin pannel links */}
+      <li className="nav-item dropdown px-3 ">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          OurProject Details
+        </a>
+        <ul
+          className="dropdown-menu dropdown-menu-dark"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li className="nav-item px-3">
+            <Link href="/admin/ourproject/add">
+              <a
+                className={
+                  router.pathname === "/admin/ourproject/add"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Add OurProject
+              </a>
+            </Link>
+          </li>
+          <li className="nav-item px-3">
+            <Link href="/admin/ourproject/all">
+              <a
+                className={
+                  router.pathname === "/admin/ourproject/all"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                OurProject
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </li>
+
+
+
       <li className="nav-item px-3">
         <Link href="/fabtech">
           <a
@@ -312,7 +374,7 @@ const NavBar = () => {
         </Link>
       </li>
       <li className="nav-item px-3">
-        <Link href="/#">
+        <Link href="/industrytec">
           <a
             className={
               router.pathname === "/industrytec"
@@ -392,13 +454,26 @@ const NavBar = () => {
           </li> */}
         </ul>
       </li>
-      <li className="nav-item px-3 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 rounded-md ...">
+      <li className="nav-item px-3">
+              <Link href="/contact">
+                <a
+                  className={
+                    router.pathname === "/contact"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Contact Us  
+                </a>
+              </Link>
+      </li>
+      <li className="nav-item px-3 ">
         <Link href="/fabtech">
           <a
             className={
               router.pathname === "/fabtech"
                 ? "nav-link active"
-                : "nav-link text-neutral-50 hover:text-sky-400"
+                : "nav-link"
             }
           >
             FabTech Event

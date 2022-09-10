@@ -15,7 +15,7 @@ const PastEvent = () => {
 
   const getEvents = async () => {
     try {
-      const response = await axios.get(`${API_URL}/api/pastevent`);
+      const response = await axios.get(`${API_URL}/api/pastevent/`);
       //only status is true data will be shown
       setEvents(response.data.filter((item) => item.status === true)); //only status is true data will be shown
       console.log(response.data);
@@ -71,7 +71,7 @@ const PastEvent = () => {
         <HomeWrapper>
           <Slider {...settings} className={styles.card_container}>
             {events.map((curElem) => {
-              console.log(curElem);
+              console.log(curElem,"test");
               return (
                 <div className="p-4 sm:w-1/2 lg:w-1/3" key={curElem.id}>
                   <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">

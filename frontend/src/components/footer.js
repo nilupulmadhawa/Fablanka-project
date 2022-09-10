@@ -85,7 +85,7 @@ const Footer = () => {
             <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="/about" className="text-reset">
                   Our Team
                 </a>
               </p>
@@ -95,7 +95,7 @@ const Footer = () => {
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="industrytec" className="text-reset">
                   Industry 4.0 Technologies
                 </a>
               </p>
@@ -110,11 +110,11 @@ const Footer = () => {
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />
-                Makadura Public Library complex, in Makadura.
+                NO.19 Public Library complex, Makadura,    Gonavila.
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
-                info@example.com
+                fablabmakandura@gmail.com
               </p>
               <p>
                 <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88

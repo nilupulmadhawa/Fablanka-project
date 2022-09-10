@@ -1,6 +1,13 @@
 import Layout from "../../hocs/Layout";
 import MakanduraTeam from "../../components/makandura.component/makandurateam";
-import MakanduraCard from "../../components/makandura.component/OurProject";
+import dynamic from "next/dynamic";
+
+const ProjectMakandura = dynamic(
+  () => import("../../components/makandura.component/OurProject"),
+  {
+    ssr: false,
+  }
+);
 
 const LabMakadura = () => {
   return (
@@ -12,7 +19,7 @@ const LabMakadura = () => {
         <h1 className="text-[30px]">FabLab Makandura Team</h1>
         <MakanduraTeam />
         <div className="row mt-6">
-          <MakanduraCard />
+          <ProjectMakandura />
         </div>
         <div className="justify-center row">
           <h1 className="text-[50px] text-center text-[#163B64]">Location</h1>
