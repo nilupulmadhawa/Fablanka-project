@@ -1,23 +1,17 @@
-FROM python:3.7-alpine
+# Pull base image
+FROM python:3.10.7-bullseye
 
-RUN mkdir /app
-WORKDIR /app
+# Set environment variables
+ENV PIP_DISABLE_PIP_VERSION_CHECK 1
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-RUN apk update && \
-    apk upgrade && \
-	  apk add git && \
-	  apk add vim && \
-	  git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime && \
-	  sh ~/.vim_runtime/install_awesome_vimrc.sh && \
-      apk add --no-cache postgresql-libs && \
-      apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev && \
-	  sh -c "$(wget -O- https://raw.githubusercontent.com/deluan/zsh-in-docker/master/zsh-in-docker.sh)"
+# Set work directory
+WORKDIR /code
 
-COPY requirements.txt requirements.txt
+# Install dependencies
+COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
+# Copy project
 COPY . .
-
-LABEL maintainer="Samith Sandeepa <samithasandeepa@gmail.com>"
-
-CMD ./scripts/start.sh 

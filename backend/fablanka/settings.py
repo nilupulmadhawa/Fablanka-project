@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from datetime import timedelta
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -83,11 +84,15 @@ WSGI_APPLICATION = 'fablanka.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        "ENGINE": "django.db.backends.postgresql",
         'NAME': 'fablanka',
-        'PASSWORD': 'root',
-        'USER': 'postgres',
-        'HOST': 'localhost',
+        # 'PASSWORD': 'password',
+        # 'USER': 'postgres',
+        # 'HOST': 'localhost',
+        "USER": os.environ["POSTGRES_USER"],
+        "PASSWORD": os.environ["POSTGRES_PASSWORD"],
+        "HOST": os.environ["POSTGRES_HOST"],
+        "PORT": 5432,  # default postgres port
     }
 }
 
