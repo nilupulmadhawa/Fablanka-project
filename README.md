@@ -16,3 +16,10 @@ venv:
 python -m venv .venv
 venv\Scripts\activate
 deactivate
+
+docker
+docker tag fablanka 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com/fablanka
+docker push 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com/fablanka
+
+aws:
+login using cli: aws --region ap-southeast-1 ecr get-login-password | docker login --username AWS --password-stdin 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com

@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-p_5l1)=e8y&t8nhm3a+q_f1f^r4+1i*81-93w7^dy6#7c*paq)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,9 +86,9 @@ DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
         'NAME': 'fablanka',
-        # 'PASSWORD': 'password',
+        # 'PASSWORD': 'Fablanka#2022',
         # 'USER': 'postgres',
-        # 'HOST': 'localhost',
+        # 'HOST': 'fablanka.czfxoxflq1jz.ap-southeast-1.rds.amazonaws.com',
         "USER": os.environ["POSTGRES_USER"],
         "PASSWORD": os.environ["POSTGRES_PASSWORD"],
         "HOST": os.environ["POSTGRES_HOST"],
