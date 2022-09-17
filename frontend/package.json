@@ -11,8 +11,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^35.0.1",
-    "@ckeditor/ckeditor5-react": "^5.0.2",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
@@ -23,8 +21,8 @@
     "aos": "^2.3.4",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
-    "ckeditor5-custom-build": "file:ckeditor5",
     "cookie": "^0.4.1",
+    "db": "^3.4.0",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
     "mdb-react-ui-kit": "^4.1.0",
