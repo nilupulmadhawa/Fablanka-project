@@ -10,7 +10,7 @@ const fabtech = () => {
           <h1 className="font-sans text-[60px] text-[#ccb032] mb-3 mt-5 font-medium">FabTech 2022</h1>
           <h2 className="mb-2 font-medium text-[#5f5f5f]">will take place on</h2>
           <h1 className="font-sans text-[30px] text-[#e4c436] font-medium">August 26 <sup>th</sup> and August 27 <sup>th</sup> <br></br>
-          from 9.00 am to 3.00 pm</h1>
+          from 9.00 am to 4.00 pm</h1>
           <h2 className="text-[#5f5f5f]">at FabLab Makandura location in</h2>
           <h1 className="text-[30px] text-[#ccb032] font-medium mb-2">Makandura Public Library complex</h1>
           <img src="https://img.icons8.com/fluency/48/000000/more.png" className=""></img>
