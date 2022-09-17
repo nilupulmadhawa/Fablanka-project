@@ -13,8 +13,6 @@ const PastEvent = dynamic(
   }
 );
 
-
-
 const NewAlert = dynamic(
   () => import("../components/news.component/NewAlert"),
   {
