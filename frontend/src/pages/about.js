@@ -3,6 +3,7 @@ import Styles from "../styles/about.module.css";
 //import OurTeam from "../components/about.component/OurTeam";
 import React, { useEffect, useState } from "react";
 import Aos from "aos";
+import dynamic from "next/dynamic";
 
 const OurTeam = dynamic(
   () => import("../components/about.component/OurTeam"),
