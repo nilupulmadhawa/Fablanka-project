@@ -1,0 +1,26 @@
+{
+  "..\\hocs\\Layout.js -> ../components/Footer": {
+    "id": "..\\hocs\\Layout.js -> ../components/Footer",
+    "files": [
+      "static/chunks/src_components_Footer_js.js"
+    ]
+  },
+  "..\\hocs\\Layout.js -> ../components/Navbar": {
+    "id": "..\\hocs\\Layout.js -> ../components/Navbar",
+    "files": [
+      "static/chunks/src_components_Navbar_js.js"
+    ]
+  },
+  "index.js -> ../components/news.component/NewAlert": {
+    "id": "index.js -> ../components/news.component/NewAlert",
+    "files": [
+      "static/chunks/src_components_news_component_NewAlert_js.js"
+    ]
+  },
+  "index.js -> ../components/pastevent.component/PastEvent": {
+    "id": "index.js -> ../components/pastevent.component/PastEvent",
+    "files": [
+      "static/chunks/src_components_pastevent_component_PastEvent_js.js"
+    ]
+  }
+}
