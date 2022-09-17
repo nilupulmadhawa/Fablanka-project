@@ -1,4 +1,4 @@
-const slugify = require('./utils/slugify');
+const slugify = require('slugify');
 const fs = require('fs');
 const qs = slugify('some string');
 
