@@ -5,5 +5,4 @@ module.exports = {
     loader: 'akamai',
     path: '',
   },
-  distDir: "build",
 };
