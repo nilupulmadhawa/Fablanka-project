@@ -31,7 +31,7 @@ const news = (props) => {
 news.getInitialProps = async (context) => {
   const newsID = context.query.id;
   const response = await axios.get(`${API_URL}/api/newspage/${newsID}`);
-  return { news: response.data };
+  return { news: response.data};
 };
 
 export default news;

@@ -45,8 +45,8 @@ const LoginPage = () => {
 
   return (
     <Layout
-      title="httpOnly Auth | Login"
-      content="Resiger page for this auth tutorial on httpOnly cookies"
+      title="FabLanka | Login"
+      content="Resiger page"
     >
       <h1 className="display-4 mt-5">Login Page</h1>
       <form className="bg-light p-5 mt-5 mb-5" onSubmit={onSubmit}>
