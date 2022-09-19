@@ -152,7 +152,7 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'https://fablanka-project-phi.vercel.app',
+    'http://localhost:3000',
 ]
 
 # Default primary key field type

@@ -11,14 +11,14 @@ const AddNews = dynamic(
 );
 
 const NewsAdd = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  const loading = useSelector((state) => state.auth.loading);
-  console.log(loading);
+  // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  // const loading = useSelector((state) => state.auth.loading);
+  // console.log(loading);
 
-  if (typeof window !== "undefined" && !loading && !isAuthenticated)
-    router.push("/login");
+  // if (typeof window !== "undefined" && !loading && !isAuthenticated)
+  //   router.push("/login");
   return (
     <>
       <Layout title="FabLanka | News" content="Dashboard page">
