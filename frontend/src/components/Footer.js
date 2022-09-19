@@ -51,7 +51,7 @@ const Footer = () => {
                 FabLanka
               </h6>
               <Image
-                src="/FABcube.png"
+                src="http://localhost:3000/FABcube.png"
                 width={100}
                 height={100}
                 alt="Fablanka logo"
@@ -110,7 +110,7 @@ const Footer = () => {
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />
-                NO.19 Public Library complex, Makadura,    Gonavila.
+                NO.19 Public Library complex, Makadura, Gonavila.
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />

@@ -15,7 +15,7 @@ const EditProjectMakandura = dynamic(
 );
 
 const editprojectmakandura = (props) => {
-  console.log(props);
+  // console.log(props);
   // const router = useRouter();
 
   // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -31,23 +31,40 @@ const editprojectmakandura = (props) => {
         <div className="container mb-10">
           {/* <EditProjectMakandura /> */}
           <EditProjectMakandura
-            id={props.project.id}
-            title={props.project.title__project_m}
-            summery={props.project.summery_project_m}
-            content={props.project.content_project_m}
-            image={props.project.image_project_m}          />
+            id={props.project?.id}
+            title={props.project?.title_project_m}
+            summery={props.project?.summery_project_m}
+            content={props.project?.content_project_m}
+            image={props.project?.image_project_m}
+          />
         </div>
       </Layout>
     </div>
   );
 };
+export async function getStaticPaths(c) {
+  // console.log(c, "sffgsgf");
+
+  return {
+    paths: [
+      {
+        params: {
+          id: "1",
+        },
+      },
+    ],
+    fallback: false,
+  };
+}
 
 //return newsID from params
-editprojectmakandura.getInitialProps = async (context) => {
-  const projectID = context.query.id;
-  const response = await axios.get(`${API_URL}/api/projectmakandura/${projectID}`);
-  console.log(response);
-  return { project: response.data };
-};
+export async function getStaticProps(context) {
+  const projectID = context.params.id;
+  const response = await axios.get(
+    `${API_URL}/api/projectmakandura/${projectID}`
+  );
+  // console.log(response);
+  return { props: { project: response.data } };
+}
 
 export default editprojectmakandura;

@@ -7,7 +7,7 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const SingleProject = (props) => {
-  console.log(props.content);
+  console.log(props, "dsf");
 
   // const [editorState, setEditorState] = React.useState([]);
 
@@ -15,14 +15,12 @@ const SingleProject = (props) => {
   const contentState = convertFromRaw(JSON.parse(props.content));
   const editorState = EditorState.createWithContent(contentState);
 
-  useEffect(() => {
-    console.log("ahgsd")
-  });
+  useEffect(() => {});
 
   return (
     <div className="container mb-5">
-      <h1 className="text-center text-3xl">{props.title_project_m}</h1>
-      <p className="my-5 text-lg">{props.summery_project_m}</p>
+      <h1 className="text-center text-3xl">{props.title}</h1>
+      <p className="my-5 text-lg">{props.summery}</p>
       {/* <Image width={100} height={100} src={props.image} /> */}
       <div className="row">
         <div className="col-md-12">
