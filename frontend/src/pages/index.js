@@ -27,6 +27,7 @@ const HomePage = () => {
   //retrive data from http://dnd5eapi.co/api/conditions/blinded
 
   useEffect(() => {
+    console.log("useEffect");
     axios.get("http://dnd5eapi.co/api/conditions/blinded").then((res) => {
       console.log(res.data, "test data");
     });
