@@ -20,7 +20,7 @@ const App = ({ Component, pageProps }) => {
         <title>FabLanka</title>
         <meta name="viewport" content="width=device-width, inital-scale=1" />
         <meta
-          http-equiv="Content-Security-Policy"
+          httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         ></meta>
         <link
