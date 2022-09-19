@@ -30,24 +30,38 @@ const editevents = (props) => {
       <Layout title="FabLanka | News" content="Dashboard page">
         <div className="container mb-10">
           <EditEvents
-            id={props.events.id}
-            title={props.events.title_pastevent}
-            summery={props.events.summery_pastevent}
-            content={props.events.content_pastevent}
-            image={props.events.image_project_m}
-            status={props.events.status}
+            id={props.events?.id}
+            title={props.events?.title_pastevent}
+            summery={props.events?.summery_pastevent}
+            content={props.events?.content_pastevent}
+            image={props.events?.image_project_m}
+            status={props.events?.status}
           />
         </div>
       </Layout>
     </div>
   );
 };
+export async function getStaticPaths(c) {
+  // console.log(c, "sffgsgf");
+
+  return {
+    paths: [
+      {
+        params: {
+          id: "1",
+        },
+      },
+    ],
+    fallback: false,
+  };
+}
 
 //return evetsID from params
-editevents.getInitialProps = async (context) => {
-  const evetsID = context.query.id;
+export async function getStaticProps(context) {
+  const evetsID = context.params.id;
   const response = await axios.get(`${API_URL}/api/pastevent/${evetsID}`);
-  return { events: response.data };
-};
+  return { props: { events: response.data } };
+}
 
 export default editevents;

@@ -30,12 +30,12 @@ const editnews = (props) => {
       <Layout title="FabLanka | News" content="Dashboard page">
         <div className="container mb-10">
           <EditNews
-            id={props.news.id}
-            title={props.news.title}
-            summery={props.news.summery}
-            content={props.news.content}
-            image={props.news.image}
-            status={props.news.status}
+            id={props.news?.id}
+            title={props.news?.title}
+            summery={props.news?.summery}
+            content={props.news?.content}
+            image={props.news?.image}
+            status={props.news?.status}
           />
         </div>
       </Layout>
@@ -43,11 +43,26 @@ const editnews = (props) => {
   );
 };
 
+export async function getStaticPaths(c) {
+  // console.log(c, "sffgsgf");
+
+  return {
+    paths: [
+      {
+        params: {
+          id: "1",
+        },
+      },
+    ],
+    fallback: false,
+  };
+}
+
 //return newsID from params
-editnews.getInitialProps = async (context) => {
-  const newsID = context.query.id;
+export async function getStaticProps(context) {
+  const newsID = context.params.id;
   const response = await axios.get(`${API_URL}/api/newspage/${newsID}`);
-  return { news: response.data };
-};
+  return { props: { news: response.data } };
+}
 
 export default editnews;

@@ -33,7 +33,7 @@ const EventsTable = () => {
     //if status is true then set status to false
     //if status is false then set status to true
     axios
-      .patch(`http://localhost:8000/api/pastevent/${id}/`, { status: status })
+      .patch(`${API_URL}/api/pastevent/${id}/`, { status: status })
       .then((res) => {
         console.log(res);
         //alert for change status successfully
@@ -51,7 +51,7 @@ const EventsTable = () => {
       )
     ) {
       try {
-        await axios.delete(`http://localhost:8000/api/pastevent/${id}`);
+        await axios.delete(`${API_URL}/api/pastevent/${id}`);
         getEvents();
       } catch (error) {
         console.log(error);

@@ -22,9 +22,8 @@ const EditProjectMakandura = (props) => {
   const [image_project_m, setImage] = useState(props?.image);
   const [status, setStatus] = useState(props?.status);
 
-
   useEffect(() => {
-    console.log("dsahgf")
+    console.log("dsahgf");
   });
 
   // update news data to the database
@@ -46,7 +45,7 @@ const EditProjectMakandura = (props) => {
       };
       // console.log(content);
       axios
-        .put(`http://localhost:8000/api/projectmakandura/${props.id}/`, projectmakandura)
+        .put(`${API_URL}/api/projectmakandura/${props.id}/`, projectmakandura)
         .then((res) => {
           console.log(res);
           window.location.href = "/admin/ourproject/all";
