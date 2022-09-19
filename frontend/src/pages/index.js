@@ -28,7 +28,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios.get("http://dnd5eapi.co/api/conditions/blinded").then((res) => {
-      console.log(res.data);
+      console.log(res.data, "test data");
     });
 
     Aos.init({ duration: 1000 });
