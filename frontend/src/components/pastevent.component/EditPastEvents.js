@@ -42,7 +42,7 @@ const EditNews = (props) => {
       };
       // console.log(content);
       axios
-        .put(`${API_URL}/api/pastevent/${props.id}/`, pastevents)
+        .put(`http://localhost:8000/api/pastevent/${props.id}/`, pastevents)
         .then((res) => {
           console.log(res);
           window.location.href = "/admin/pastevents/all";
