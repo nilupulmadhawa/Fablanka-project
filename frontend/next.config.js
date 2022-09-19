@@ -5,4 +5,12 @@ module.exports = {
     loader: "akamai",
     path: "",
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://api.fablanka.org/:path*",
+      },
+    ];
+  },
 };
