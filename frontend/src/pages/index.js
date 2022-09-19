@@ -5,6 +5,7 @@ import Aos from "aos";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import styles from "../styles/index.module.css";
+import axios from "axios";
 
 const PastEvent = dynamic(
   () => import("../components/pastevent.component/PastEvent"),
@@ -23,7 +24,13 @@ const NewAlert = dynamic(
 const HomePage = () => {
   const [readMore, setReadMore] = useState(false);
 
+  //retrive data from http://dnd5eapi.co/api/conditions/blinded
+
   useEffect(() => {
+    axios.get("http://dnd5eapi.co/api/conditions/blinded").then((res) => {
+      console.log(res.data);
+    });
+
     Aos.init({ duration: 1000 });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
