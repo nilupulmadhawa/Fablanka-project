@@ -13,17 +13,14 @@ export default async (req, res) => {
     });
 
     try {
-      const apiRes = await fetch(
-        `https://api.fablanka.org/api/account/register`,
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: body,
-        }
-      );
+      const apiRes = await fetch(`${API_URL}/api/account/register`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: body,
+      });
 
       const data = await apiRes.json();
 
