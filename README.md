@@ -18,6 +18,8 @@ venv\Scripts\activate
 deactivate
 
 docker
+docker build -t fablanka-local .
+docker run -p 3000:3000 fablanka-local
 docker tag fablanka 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com/fablanka
 docker push 953437657370.dkr.ecr.ap-southeast-1.amazonaws.com/fablanka
 

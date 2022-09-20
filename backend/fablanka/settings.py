@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'pastevent',
     'projectmakandura',
     'makandurateam',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,7 @@ ROOT_URLCONF = 'fablanka.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend-build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,13 +87,10 @@ DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
         'NAME': 'fablanka',
-        # 'PASSWORD': 'Fablanka#2022',
-        # 'USER': 'postgres',
-        # 'HOST': 'fablanka.czfxoxflq1jz.ap-southeast-1.rds.amazonaws.com',
-        "USER": os.environ["POSTGRES_USER"],
-        "PASSWORD": os.environ["POSTGRES_PASSWORD"],
-        "HOST": os.environ["POSTGRES_HOST"],
-        "PORT": 5432,  # default postgres port
+        "USER": os.environ.get("POSTGRES_USER", default="postgres"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "password"),
+        "HOST": os.environ.get("POSTGRES_HOST", default="localhost"),
+        "PORT": 5432,
     }
 }
 
@@ -133,6 +131,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend-build', "static"),
+    os.path.join(BASE_DIR, "frontend-build", "server", "pages")
+]
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -151,9 +154,14 @@ SIMPLE_JWT = {
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken', ),
 }
 
-CORS_ALLOWED_ORIGINS = [
+CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
+    'http://localhost:3001',
 ]
+
+# CORS_ALLOWED_ORIGINS = [
+#     '*',
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
