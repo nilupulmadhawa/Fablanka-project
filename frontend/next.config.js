@@ -5,12 +5,12 @@ module.exports = {
     loader: "akamai",
     path: "",
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://api.fablanka.org/:path*",
-      },
-    ];
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    config.optimization.splitChunks.cacheGroups = {}
+    config.optimization.minimize = true;
+    return config
   },
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL
+  }
 };
