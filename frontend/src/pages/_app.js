@@ -7,8 +7,8 @@ import Head from "next/head";
 import { Provider } from "react-redux";
 import { useStore } from "../store";
 import "../styles/globals.css";
-import "@fortawesome/fontawesome-svg-core/styles.css"; //importing font awesome css
-import { config } from "@fortawesome/fontawesome-svg-core";
+import '@fortawesome/fontawesome-svg-core/styles.css'; //importing font awesome css
+import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
 const App = ({ Component, pageProps }) => {
@@ -19,10 +19,6 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <title>FabLanka</title>
         <meta name="viewport" content="width=device-width, inital-scale=1" />
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="upgrade-insecure-requests"
-        ></meta>
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
