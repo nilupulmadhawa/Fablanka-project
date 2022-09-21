@@ -19,6 +19,10 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <title>FabLanka</title>
         <meta name="viewport" content="width=device-width, inital-scale=1" />
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        ></meta>
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
