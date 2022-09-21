@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "make-q": "node ./build.js",
-    "build": "next build && next export",
+    "build": "npm run make-q && next build",
     "export": "next build && next export",
     "ex": "next export",
     "start": "next start",
@@ -29,7 +29,6 @@
     "mdb-react-ui-kit": "^4.1.0",
     "mdbreact": "^4.6.1",
     "next": "^12.2.4",
-    "nextjs-cors": "^2.1.1",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.4.0",
