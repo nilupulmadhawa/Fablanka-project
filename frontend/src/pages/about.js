@@ -20,7 +20,6 @@ const About = () => {
     <Layout title="FabLab | About" content="Fablab about page">
       <>
         <div
-          breakpoint="sm"
           className="container- shadow bg-white rounded p-5 mb-5 position-relative"
         >
           <div className="row">

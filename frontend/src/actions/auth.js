@@ -173,8 +173,7 @@ export const login = (username, password) => async (dispatch) => {
       });
       dispatch(load_user());
     } else {
-
-    ////////////////////////////////////////////////////////////////
+      ////////////////////////////////////////////////////////////////
       console.log(res.status);
       dispatch({
         type: LOGIN_FAIL,

@@ -37,7 +37,6 @@ const LabMakadura = () => {
               height="600"
               allowFullScreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>
