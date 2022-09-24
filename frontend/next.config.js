@@ -2,11 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ["assets.example.com"],
-    loader: "akamai",
-    path: "",
-  },
   distDir: '.next',
 };
 
